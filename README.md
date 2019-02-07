@@ -1,2 +1,2 @@
-# project5
+# Budgeting app
 Basic instructions go here.
