@@ -1,0 +1,24 @@
+.balance{
+    height: 8em;
+}
+
+.form-check{
+	padding: 2px;
+}
+
+.col{
+	display: inline-block;
+}
+
+.modal-body{
+	max-height: 800px;
+}
+
+.warningLink{
+	text-decoration: none !important;
+	color:rgb(31, 31, 31)
+}
+
+.warningLink:hover{
+	color:black
+}
