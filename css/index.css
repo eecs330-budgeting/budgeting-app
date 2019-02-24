@@ -1,3 +1,7 @@
+#wrapper{
+	margin: 0 auto;
+    max-width: 1200px;
+}
 .balance{
     height: 8em;
 }
@@ -16,9 +20,44 @@
 
 .warningLink{
 	text-decoration: none !important;
-	color:rgb(31, 31, 31)
+	color:rgb(31, 31, 31);
 }
 
 .warningLink:hover{
-	color:black
+	color:black;
+}
+
+.modal-wrap{
+	background: rgba(255,255,255,.85);
+}
+
+.bugdet-modal{
+	background: #fff;
+	-moz-box-shadow: #ebebeb 0 0 20px 5px;
+    -webkit-box-shadow: #ebebeb 0 0 20px 5px;
+    box-shadow: #ebebeb 0 0 20px 5px;
+}
+
+.modal-content{
+	border: none;
+}
+
+.bugdet-modal-footer{
+	background-color: black;
+}
+
+.buget-radius{
+	border-radius: 3px;
+}
+
+.transparent{
+	background: transparent;
+	border: none;
+}
+.primary-color{
+	background-color:#6f72dc;
+}
+
+.primary-color:hover{
+	background-color:#5053a2;
 }
