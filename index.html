@@ -16,33 +16,17 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/warning.css"/>
-
-    <script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-
-    <title>BudgetForNow</title>
-
-</script>
+    <link rel="stylesheet" href="css/warning.css" />
+      <title>BudgetForNow</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -73,38 +57,187 @@
             <a class="nav-link" href="#">Report</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Account</a>
+            <a class="nav-link" href="account.html">Account</a>
           </li>
         </ul>
       </div>
     </nav>
     <div id="wrapper">
-      <a href="" class="warningLink" data-toggle="modal" data-target="#hintModal" >
-          <div class="alert alert-danger" role="alert" >
-              A simple danger alert—check it out!
-              <a href="#" class="btn"><i class="fas fa-times-circle"></i></a>
-            </div>
-      </a>
-      <div class="container balance">
-          <div class="row balance-row">
-            <div class="col" display =>
-              <h2>$1500</h2>
-              <h4>in account</h4>
-            </div>
-            <div class="col" display = "inline">
-              <h2>$200</h2>
-              <h4>left for month</h4>
+      <div class="container home-section">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="budget-card-view">
+              <header class="card-header transparent">Balance</header>
+              <div class="card-content" id="account-balance">
+                <ul>
+                  <li class="card-balance">
+                    <div class="balance-header">
+                      <h3>
+                        <div>
+                          <span class="icon"
+                            ><i class="far fa-money-bill-alt"></i
+                          ></span>
+                          <span>Cash</span>
+                        </div>
+                        <span class="balance-amount">$ 270</span>
+                      </h3>
+                    </div>
+                  </li>
+                  <li class="card-balance">
+                    <div class="balance-header">
+                      <h3>
+                        <div>
+                          <span><i class="fas fa-piggy-bank"></i></span>
+                          <span>Saving Cards</span>
+                        </div>
+                        <span class="balance-amount">$ 270</span>
+                      </h3>
+                    </div>
+                    <ul class="bank-list">
+                      <li>
+                        <h4>
+                          <span>CHASE COLLEGE</span>
+                          <span>$ 200</span>
+                        </h4>
+                        <h6>
+                          <span class="nickname">Chase Bank</span>
+                        </h6>
+                      </li>
+                      <li>
+                        <h4>
+                          <span>BOA COLLEGE</span>
+                          <span>$ 70</span>
+                        </h4>
+                        <h6>
+                          <span class="nickname">Bank of America</span>
+                        </h6>
+                      </li>
+                      <li>
+                        <a href="#" class="add-another-ba"
+                          >+ Link another bank account</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="card-balance">
+                    <div class="balance-header">
+                      <h3>
+                        <div>
+                          <span><i class="far fa-credit-card"></i></span>
+                          <span>Credit Cards</span>
+                        </div>
+                        <span class="balance-amount">$ 0</span>
+                      </h3>
+                    </div>
+                    <ul class="bank-list">
+                      <li>
+                        <a href="#" class="add-another-ba"
+                          >+ Link another bank account</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="balance-total">
+                  <li class="assets-total">
+                    <span>ASSETS</span>
+                    <span>$ 540</span>
+                  </li>
+                  <li class="debit-total">
+                    <span>DEBITS</span>
+                    <span>$ 0</span>
+                  </li>
+                  <li class="net-worth">
+                    <span>NET WORTH</span>
+                    <span>$ 540</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+          <div class="col-md-8">
+            <div class="budget-card-view">
+              <header class="card-header transparent">Warnings</header>
+              <div class="card-content" id="warnings">
+                  <ul>
+                      <li class="card-warnings">
+                        <div class="warnings-header">
+                          <h3>
+                            <div>
+                            <a href="" class="warningLink" data-toggle="modal" data-target="#hintModal" >
+                              <span class="icon">
+                                  <i class="fas fa-exclamation-triangle red"></i>
+                              </span>
+                              <span>Budget exceed for now: $200</span>
+                            </a>
+                            </div>
+                            <span>
+                                <a href="#" class="btn"><i class="fas fa-times-circle"></i></a>
+                            </span>
+                          </h3>
+                        </div>
+                      </li>
+                    </ul>
+              </div>
+            </div>
+            <div class="budget-card-view">
+                <header class="card-header transparent">Recent Purchases</header>
+                <div class="card-content" id="purchases">
+                    <button
+                    type="button"
+                    class="btn btn-primary btn-lg purchases-btn"
+                    data-toggle="modal"
+                    data-target="#addModal"
+                  >
+                    Add Purchase
+                  </button>
+                    <div class="purchases-date"><span >Monday, Feb 11</span></div>
+                    <ul>
+                        <li class="card-purchases">
+                          <div class="purchases-header">
+                            <h3>
+                              <div class="purchase-content">
+                                <span class="icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                                <div class="purchase-title">
+                                    <span>Get-together</span>
+                                    <span>$ 20</span>
+                                </div>
+                              </div>
+                              <span>
+                                  <a href="#" class="btn" data-toggle="modal"
+                                  data-target="#editModal"><i class="far fa-edit"></i></a>
+                              </span>
+                            </h3>
+                          </div>
+                        </li>
+                        <li class="card-purchases">
+                            <div class="purchases-header">
+                              <h3>
+                                <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </span>
+                                  <div class="purchase-title">
+                                      <span>Going out</span>
+                                      <span>$ 100</span>
+                                  </div>
+                                </div>
+                                <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                    data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                              </h3>
+                            </div>
+                          </li>
+                      </ul>
+                </div>
+              </div>
+          </div>
         </div>
-      <button
-        type="button"
-        class="btn btn-primary btn-lg budget-radius primary-color border-0"
-        data-toggle="modal"
-        data-target="#addModal"
-      >
-        Add Purchase
-      </button>
+      </div>
+
       <!-- addModal -->
       <div class="modal modal-wrap" tabindex="-1" role="dialog" id="addModal">
         <div class="modal-dialog bugdet-modal border-0" role="document">
@@ -121,57 +254,112 @@
               </button>
             </div>
             <div class="modal-body" height>
-                <div class="form-group row">
-                    <div class="col-sm-3">Type of Purchase</div>
-                    <div class="col-sm-9">
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                          <label class="form-check-label" for="inlineCheckbox1">Food</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox2">Rent</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                          <label class="form-check-label" for="inlineCheckbox3">Activity Cost</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                          <label class="form-check-label" for="inlineCheckbox4">Going Out</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox5">Entertainment</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <div class="dropdown show ">
-                          <a id="more" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ...
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="more">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
-                        </div>
+              <div class="form-group row">
+                <div class="col-sm-3">Type of Purchase</div>
+                <div class="col-sm-9">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >Food</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox2"
+                      >Rent</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox3"
+                      value="option3"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox3"
+                      >Activity Cost</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox4"
+                      >Going Out</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox5"
+                      >Entertainment</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <div class="dropdown show ">
+                      <a
+                        id="more"
+                        class="btn dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        ...
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="more">
+                        <a class="dropdown-item" href="#">Tuition</a>
+                        <a class="dropdown-item" href="#"
+                          >Customize your tag</a
+                        >
                       </div>
                     </div>
                   </div>
-                  <div class="form-group row">
-                      <div class="col-sm-3">Cost</div>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control buget-radius" id="validationCustom01" placeholder="$$$" value="" required>
-                      </div>
-                  </div>
-                  <div class="form-group row">
-                      <div class="col-sm-3">Date</div>
-                      <div class="col-sm-9">
-                          <input type="date" class="form-control buget-radius" id="validationCustom02" name="trip-start"
-                          value="2018-07-22"
-                          min="2018-01-01" max="2018-12-31">
-                      </div>
-                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3">Cost</div>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control buget-radius"
+                    id="validationCustom01"
+                    placeholder="$$$"
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3">Date</div>
+                <div class="col-sm-9">
+                  <input
+                    type="date"
+                    class="form-control buget-radius"
+                    id="validationCustom02"
+                    name="trip-start"
+                    value="2019-02-24"
+                    min="2019-01-01"
+                    max="2019-12-31"
+                  />
+                </div>
+              </div>
             </div>
             <div class="modal-footer bugdet-modal-footer">
               <button
@@ -181,7 +369,10 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary budget-radius primary-color border-0">
+              <button
+                type="button"
+                class="btn btn-primary budget-radius primary-color border-0"
+              >
                 Submit purchase
               </button>
             </div>
@@ -189,6 +380,160 @@
         </div>
       </div>
       <!-- End of addModal-->
+      <!-- editModal -->
+      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="editModal">
+          <div class="modal-dialog bugdet-modal border-0" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit Your Purchase</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" height>
+                <div class="form-group row">
+                  <div class="col-sm-3">Type of Purchase</div>
+                  <div class="col-sm-9">
+                      <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="inlineCheckbox1"
+                            value="option1"
+                            checked
+                          />
+                          <label class="form-check-label" for="inlineCheckbox1"
+                            >Get-together</label
+                          >
+                        </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox1"
+                        value="option1"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox1"
+                        >Food</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox2"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox2"
+                        >Rent</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox3"
+                        value="option3"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox3"
+                        >Activity Cost</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox1"
+                        value="option1"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox4"
+                        >Going Out</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="inlineCheckbox2"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="inlineCheckbox5"
+                        >Entertainment</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <div class="dropdown show ">
+                        <a
+                          id="more"
+                          class="btn dropdown-toggle"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          ...
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="more">
+                          <a class="dropdown-item" href="#">Tuition</a>
+                          <a class="dropdown-item" href="#"
+                            >Customize your tag</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3">Cost</div>
+                  <div class="col-sm-9">
+                    <input
+                      type="text"
+                      class="form-control buget-radius"
+                      id="validationCustom01"
+                      placeholder="$$$"
+                      value="$20"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-3">Date</div>
+                  <div class="col-sm-9">
+                    <input
+                      type="date"
+                      class="form-control buget-radius"
+                      id="validationCustom02"
+                      name="trip-start"
+                      value="2019-02-11"
+                      min="2019-01-01"
+                      max="2019-12-31"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer bugdet-modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary budget-radius transparent"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary budget-radius primary-color border-0"
+                >
+                  Edited
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- End of editModal-->
       <!-- hintModal -->
       <div class="modal modal-wrap" tabindex="-1" role="dialog" id="hintModal">
         <div class="modal-dialog bugdet-modal border-0" role="document">
@@ -207,49 +552,56 @@
             <div class="modal-body" height>
               <div class="container">
                 <div class="jumbotron transparent">
-                    <h1 class="display-5 text-center"><i class="material-icons"><span class="sign">warning</span></i> Recommend Daily Spend: $7 </h1>
-        
-                    <hr class="my-5">
-                    <div class="container-fluid">
-        
-                        <a class="btn btn-default" href="#" role="button">
-                            <div>
-                            <h2 class="text-right">$1500</h2>
-                            <h4 class="text-right">balance</h4>
-                            </div>
-                        </a>
-                        <div class="balance_budget">
-                            <a class="btn btn-default balance_budget" href="#" role="button">
-                                <div>
-                                    <h2>$50</h2>
-                                    <h4>budget left</h4>
-                                </div>
-                            </a>
+                  <h1 class="display-5 text-center">
+                    <i class="fas fa-exclamation-triangle red"></i> Recommend
+                    Daily Spend: $7
+                  </h1>
+
+                  <hr class="my-5" />
+                  <div class="container-fluid">
+                    <a class="btn btn-default" href="#" role="button">
+                      <div>
+                        <h2 class="text-right">$1500</h2>
+                        <h4 class="text-right">balance</h4>
+                      </div>
+                    </a>
+                    <div class="balance_budget">
+                      <a
+                        class="btn btn-default balance_budget"
+                        href="#"
+                        role="button"
+                      >
+                        <div>
+                          <h2>$50</h2>
+                          <h4>budget left</h4>
+                        </div>
+                      </a>
                     </div>
-        
-        
-        
-        
-                    <hr class="my-4">
+
+                    <hr class="my-4" />
                     <p class="lead"></p>
-                    <p class="lead"> Time left in this period: 7 Days</p>
-                    <hr class="my-4">
-                    <p class="lead"> Budget left in this period: $50</p>
-                    <hr class="my-4">
-                    <p class="lead"> Budget exceed for now: $200 </p>
-                    <hr class="my-4">
-        
-        
-        
-                    <button type="button" class="btn btn-warning btn-lg btn-block" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="Hint for you" data-content="Don't speed money except keeping youself alive!!!">Get a hint!</button>
-        
-        
-                    </div>
-        
+                    <p class="lead">Time left in this period: 7 Days</p>
+                    <hr class="my-4" />
+                    <p class="lead">Budget left in this period: $50</p>
+                    <hr class="my-4" />
+                    <p class="lead">Budget exceed for now: $200</p>
+                    <hr class="my-4" />
+
+                    <button
+                      type="button"
+                      class="btn btn-warning btn-lg btn-block"
+                      data-container="body"
+                      data-toggle="popover"
+                      data-trigger="focus"
+                      data-placement="top"
+                      title="Hint for you"
+                      data-content="Don't speed money except keeping youself alive!!!"
+                    >
+                      Get a hint!
+                    </button>
+                  </div>
                 </div>
-        
-            </div>
-        
+              </div>
             </div>
             <div class="modal-footer bugdet-modal-footer">
               <button
@@ -280,14 +632,12 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="js/index.js"></script>
     <script>
       $(document).ready(function() {
-          $(function () {
-              $('[data-toggle="popover"]').popover()
-          })
-
+        $(function() {
+          $('[data-toggle="popover"]').popover();
+        });
       });
-  </script>
+    </script>
   </body>
 </html>
