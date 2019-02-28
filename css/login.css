@@ -30,8 +30,8 @@
     bottom: 0;
 }
 .signin{
-    margin-bottom: 50px;
-    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-top: 20px;
     margin-left: 10px;
     font-weight: 700;
 }
@@ -41,7 +41,34 @@
     padding-left: 2px;
     padding-bottom: 2px;
     font-weight: 700;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: 1px;
+}
+
+.term{
+    font-size: 12px;
+}
+
+.login-btn{
+
+    background-color: #f7f7f7;
+    border-radius: 0;
+    color:black;
+    font-size:15px;
+    border:0;
+}
+
+.login-btn:hover{
+    background-color: black;
+    color: white;
+}
+.login-btn:active{
+    background-color: rgba(40,40,40,1);
+    color: white;
+    outline: none;
+}
+
+.white{
+    background-color: white;
 }
 

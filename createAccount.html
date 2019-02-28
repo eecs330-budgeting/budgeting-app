@@ -25,28 +25,41 @@
             <h1 class="signin">Create Account</h1>
 
             <label class="email">
+                Your aame
+            </label>
+            <div class="input-group">
+                <input   tabindex="1"  required class="form-control">
+            </div>
+
+            <label class="email">
                 Email
             </label>
             <div class="input-group">
-                <input type="email" name="email" tabindex="1" placeholder="E-mail" required class="form-control">
+                <input type="email" name="email" tabindex="2" placeholder="E-mail" required class="form-control">
             </div>
             <label class="email">
                 Password
             </label>
             <div class="input-group">
-                <input type="Password" pattern=".{8,16}" required title="8-16" class="form-control" placeholder="Password">
+                <input type="Password" pattern=".{8,16}" tabindex="3" required title="8-16" class="form-control" placeholder="At least 8 characters">
+            </div>
+            <label class="email">
+                Re-enter password
+            </label>
+            <div class="input-group">
+                <input type="Password" pattern=".{8,16}"  tabindex="4" required title="8-16" class="form-control" placeholder="Re-enter your password">
             </div>
 
-            <label><input type="checkbox" value="true" tabindex="4"><i class="a-icon a-icon-checkbox"></i>
-                <span>
-                    Keep me signed in.
-                <span>
-            <button type="button" class="btn btn-link" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="Details" data-content="Don't check this on a public computer">Details</button>
-          </span>
+
+
+            <label><input type="checkbox" value="true" tabindex="5"><i class="a-icon a-icon-checkbox"></i>
+                <span class="term">
+                    I agree to Budget's Conditions of Use and Privacy Notice.
+
         </span></label>
 
             <hr class="my-4">
-            <a class="btn btn-primary btn-lg btn-block" href="blank.html" role="button">Create Account</a>
+            <a class="btn login-btn btn-lg btn-block " href="index.html" role="button">Create Account</a>
             <span>Already have account?</span><a href="login.html">
                 <button id="create_account_button" type="button" class="btn btn-link" data-container="body">Log In</button>
             </a>

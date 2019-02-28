@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css" />
+
+    <title>Budget</title>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+        <title>BudgetForNow</title>
+
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">BudgetForNow</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html"
+                >Home <span class="sr-only">(current)</span></a
+                >
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="budget.html">Budget</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Account</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="wrapper">
+    <div class="container home-section">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="budget-card-view">
+                    <header class="card-header transparent">Balance</header>
+                    <div class="card-content" id="account-balance">
+                        <ul>
+                            <li class="card-balance">
+                                <div class="balance-header">
+                                    <h3>
+                                        <div>
+
+                                            <span>Saved Budget</span>
+                                        </div>
+
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-balance">
+
+                                <ul class="bank-list">
+
+                                    <li>
+                                        <h4>
+                                            <span>Budget 1</span>
+
+                                        </h4>
+                                        <h6>
+                                            <span class="nickname">Period: 14 days</span>
+                                        </h6>
+                                    </li>
+
+                                    <li>
+                                        <h4>
+                                            <span>Budget 2</span>
+                                            <span class="active"><span><i class="fa fa-check-square " aria-hidden="true"></i></span> Activated</span>
+
+                                        </h4>
+                                        <h6>
+                                            <span class="nickname">Period: 30 days</span>
+                                        </h6>
+                                    </li>
+                                    <li class="card-balance">
+                                        <button type="button" class="btn btn-lg budget-btn btn-block" data-toggle="modal" data-target="#addModal">
+                                            Add New Budget
+                                        </button>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+
+                        </ul>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="budget-card-view">
+                    <header class="card-header transparent">Budget 2</header>
+                    <div class="card-content" id="warnings">
+
+
+
+                        <div class="budget-left-text"><span >Budget Exceeded</span>
+                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="modal" data-target="#addModal">
+                                Edit Budget
+                            </button>
+                        </div>
+                        <div class="budget-left-number"><span >$200.00</span>
+
+                        </div>
+
+
+                        <ul>
+
+                            <li class="card-balance">
+
+                                <ul class="bank-list">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Total Spending</span></div>
+                                            <div class="budget-left-second-number"><span >$1400.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Budget Amount</span></div>
+                                            <div class="budget-left-second-number"><span >$1200.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Days Left</span></div>
+                                            <div class="budget-left-second-number"><span >7</span></div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </ul>
+                            </li>
+                            <div class="card-content">
+                                        Budget by Categories
+                            </div>
+
+
+                        </ul>
+
+                        <ul>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                <span class="icon">
+                                    <i class="fas fa-utensils"></i>
+                                </span>
+                                            <div class="purchase-title">
+                                                <span>Food</span>
+                                                <span>$ 500</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                  <a href="#" class="btn" data-toggle="modal"
+                                     data-target="#editModal"><i class="far fa-edit"></i></a>
+                              </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-home"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Rent</span>
+                                                <span>$ 600</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Online Shopping</span>
+                                                <span>$ 100</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-glass-cheers"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Entertainment</span>
+                                                <span>$ 0</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-question-circle"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Others</span>
+                                                <span>$ 200</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

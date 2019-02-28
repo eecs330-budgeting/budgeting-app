@@ -243,3 +243,82 @@ ul.balance-total li.net-worth span:last-child{
 .purchases-btn:hover{
 	background-color:#6f72dc;
 }
+
+.budget-content{
+
+	position: relative;
+}
+
+.budget-page{
+	/*-moz-box-sizing: border-box;*/
+	/*-webkit-box-sizing: border-box;*/
+	/*box-sizing: border-box;*/
+	padding: 24px;
+	margin-bottom: 20px;
+	background-color: #fff;
+	width: 100%;
+	border: 1px solid #ebebeb;
+	position: relative;
+	-moz-transition: all 1s,ease-out;
+	-o-transition: all 1s,ease-out;
+	-webkit-transition: all 1s,ease-out;
+	transition: all 1s,ease-out;
+}
+
+.active{
+	color: orange;
+}
+
+.budget-list li h4{
+	margin: 0 0 2px;
+	font-size: 15px;
+	color: #000;
+	clear: both;
+	display: flex;
+	justify-content: space-between;
+}
+
+.budget-btn{
+
+	background-color: #f7f7f7;
+	border-radius: 0;
+	color:black;
+	font-size:15px;
+	border:0;
+}
+
+.budget-btn:hover{
+	background-color: black;
+	color: white;
+}
+.budget-btn:active{
+	background-color: rgba(40,40,40,1);
+	color: white;
+	outline: none;
+}
+
+.budget-left-text span{
+	font-size: 13px;
+	margin-left: 20px;
+	color: gray;
+}
+.budget-left-number span{
+	font-size: 24px;
+	margin-left: 20px;
+}
+
+.budget-left-second-text span{
+	font-size: 10px;
+	margin-left: 40px;
+	color: gray;
+}
+.budget-left-second-number span{
+	font-size: 16px;
+	margin-left: 40px;
+}
+.right{
+	float: right;
+}
+
+
+
