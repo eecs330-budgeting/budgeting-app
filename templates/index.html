@@ -24,8 +24,8 @@
     />
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/warning.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/warning.css') }}" />
       <title>BudgetForNow</title>
   </head>
   <body>
@@ -46,7 +46,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="{{ url_for('form') }}"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
@@ -57,7 +57,7 @@
             <a class="nav-link" href="#">Report</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="account.html">Account</a>
+            <a class="nav-link" href="{{ url_for('account') }}">Account</a>
           </li>
         </ul>
       </div>
@@ -105,7 +105,7 @@
                       </li>
                       <li>
                         <h4>
-                          <span>BOA COLLEGE</span>
+                          <span>BOA CASH REWARDS</span>
                           <span>$ 70</span>
                         </h4>
                         <h6>
@@ -191,8 +191,8 @@
                   >
                     Add Purchase
                   </button>
-                    <div class="purchases-date"><span >Monday, Feb 11</span></div>
-                    <ul>
+                    <div class="purchases-date"><span id="now-date">Monday, Feb 11</span></div>
+                    <ul class="purchase-each">
                         <li class="card-purchases">
                           <div class="purchases-header">
                             <h3>
@@ -254,6 +254,7 @@
               </button>
             </div>
             <div class="modal-body" height>
+              <form id="add-form" method="post" action="">
               <div class="form-group row">
                 <div class="col-sm-3">Type of Purchase</div>
                 <div class="col-sm-9">
@@ -262,7 +263,8 @@
                       class="form-check-input"
                       type="checkbox"
                       id="inlineCheckbox1"
-                      value="option1"
+                      name="purchaseType"
+                      value="Food"
                     />
                     <label class="form-check-label" for="inlineCheckbox1"
                       >Food</label
@@ -273,7 +275,8 @@
                       class="form-check-input"
                       type="checkbox"
                       id="inlineCheckbox2"
-                      value="option2"
+                      name="purchaseType"
+                      value="Rent"
                     />
                     <label class="form-check-label" for="inlineCheckbox2"
                       >Rent</label
@@ -284,7 +287,8 @@
                       class="form-check-input"
                       type="checkbox"
                       id="inlineCheckbox3"
-                      value="option3"
+                      name="purchaseType"
+                      value="Activity Cost"
                     />
                     <label class="form-check-label" for="inlineCheckbox3"
                       >Activity Cost</label
@@ -294,8 +298,9 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      id="inlineCheckbox1"
-                      value="option1"
+                      id="inlineCheckbox4"
+                      name="purchaseType"
+                      value="Going Out"
                     />
                     <label class="form-check-label" for="inlineCheckbox4"
                       >Going Out</label
@@ -305,8 +310,9 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      id="inlineCheckbox2"
-                      value="option2"
+                      id="inlineCheckbox5"
+                      name="purchaseType"
+                      value="Entertainment"
                     />
                     <label class="form-check-label" for="inlineCheckbox5"
                       >Entertainment</label
@@ -339,7 +345,8 @@
                     <input
                       type="text"
                       class="form-control buget-radius"
-                      id="validationCustom01"
+                      id="memo"
+                      name="memo"
                       placeholder="Say something!"
                       value=""
                       required
@@ -352,7 +359,8 @@
                   <input
                     type="text"
                     class="form-control buget-radius"
-                    id="validationCustom01"
+                    id="cost"
+                    name="cost"
                     placeholder="$$$"
                     value=""
                     required
@@ -365,30 +373,35 @@
                   <input
                     type="date"
                     class="form-control buget-radius"
-                    id="validationCustom02"
-                    name="trip-start"
-                    value="2019-02-24"
+                    id="date"
+                    name="date"
+                    value=""
                     min="2019-01-01"
                     max="2019-12-31"
                   />
                 </div>
               </div>
+              <div class="form-group">
+                  <div class="modal-footer bugdet-modal-footer footer-for-purchase">
+                      <button
+                        type="button"
+                        class="btn btn-secondary budget-radius transparent"
+                        data-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                    type="submit"
+                    class="btn btn-primary budget-radius primary-color border-0"
+                  >
+                    Submit purchase
+                  </button>
+                    </div>
+              </div>
+              
+            </form>
             </div>
-            <div class="modal-footer bugdet-modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary budget-radius transparent"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary budget-radius primary-color border-0"
-              >
-                Submit purchase
-              </button>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -658,11 +671,60 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
     <script>
+      var socket = io.connect('http://' + document.domain + ':' + location.port);
+      socket.on( 'connect', function() {
+      socket.emit( 'my event', {
+        data: 'User Connected'
+      })
+      var form = $( "#add-form" ).on( 'submit', function( e ) {
+        e.preventDefault()
+        var list = $("input[name='purchaseType']:checked").map(function () {
+            return this.value;
+        }).get();
+        let cate = list
+        let memo = $( '#memo' ).val()
+        let cost = $( '#cost' ).val()
+        socket.emit( 'my event', {
+          cate: cate,
+          memo : memo,
+          cost : cost
+        })
+      })
+    })
+    socket.on( 'my response', function( msg ) {
+        console.log( msg )
+        if( typeof msg.memo !== 'undefined' ) {
+          $( 'ul.purchase-each' ).append( '<li class="card-purchases"><div class="purchases-header"><h3><div class="purchase-content"><span class="icon"><i class="fas fa-shopping-cart"></i></span><div class="purchase-title"><span>'+msg.cate.toString()+'</span><span> $ '+msg.cost+'</span></div></div><span><a href="#" class="btn" data-toggle="modal" data-target="#editModal"><i class="far fa-edit"></i></a></span></h3></div></li>' )
+        }
+      })
       $(document).ready(function() {
         $(function() {
           $('[data-toggle="popover"]').popover();
         });
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        var d = today.getDay();
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+            dd = '0'+dd
+        } 
+        
+        today = days[d]+ ', ' +mS[mm-1] + ' ' + dd + ' ' + yyyy;
+        
+        $( '#now-date' ).text(today);
+
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+        var date_val = yyyy + '-' + mm + '-' + dd;
+        console.log(date_val)
+        $( '#date' ).val(date_val);
       });
     </script>
   </body>

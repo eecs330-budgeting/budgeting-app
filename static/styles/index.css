@@ -52,6 +52,12 @@ body{
 	background-color: black;
 }
 
+.footer-for-purchase{
+	margin-right: -15px;
+	margin-left: -15px;
+	margin-bottom: -30px;
+}
+
 .buget-radius{
 	border-radius: 3px;
 }
@@ -96,6 +102,31 @@ body{
     -webkit-transition: all 1s,ease-out;
     transition: all 1s,ease-out;
 }
+.add-a-card{
+	float:right;
+	color:black;
+}
+
+.add-a-card:hover{
+	color: black;
+}
+
+.card-logo{
+	width:210px;
+	height:100%;
+}
+
+.budget-card-text{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-top: 1px solid grey;
+	margin-top:1em;
+}
+
+.budget-card-text p{
+	margin-top:1em;
+}
 
 .card-header{
     border-bottom: 1px solid #ebebeb;
@@ -110,11 +141,11 @@ body{
     position: relative;
 }
 
-#account-balance ul, #warnings ul, #purchases ul{
+#account-balance ul, #warnings ul, #purchases ul, #profile ul{
 	padding: 0;
 }
 
-#account-balance ul li , #warnings ul li, #purchases ul li{
+#account-balance ul li , #warnings ul li, #purchases ul li, #profile ul li{
 	list-style: none;
 }
 
