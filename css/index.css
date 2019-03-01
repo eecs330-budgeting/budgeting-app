@@ -71,7 +71,7 @@ body{
 .red{
 	color: red;
 }
-
+/* ----------account.html-----------*/
 .budget-card{
 	-moz-box-shadow: 2px 2px 2px #ebebeb;
     -webkit-box-shadow: 2px 2px 2px #ebebeb;
@@ -96,6 +96,42 @@ body{
     -webkit-transition: all 1s,ease-out;
     transition: all 1s,ease-out;
 }
+
+.add-a-card{
+	float:right;
+	color:black;
+}
+
+.add-a-card:hover{
+	color: black;
+}
+
+.card-logo{
+	width:210px;
+	height:100%;
+}
+
+.budget-card-text{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-top: 1px solid grey;
+	margin-top:1em;
+}
+
+.budget-card-text p{
+	margin-top:1em;
+}
+
+#profile ul{
+	padding: 0;
+}
+
+#profile ul li{
+	list-style: none;
+}
+
+/* ----------end of account.html-----------*/
 
 .card-header{
     border-bottom: 1px solid #ebebeb;
@@ -241,7 +277,7 @@ ul.balance-total li.net-worth span:last-child{
 }
 
 .purchases-btn:hover{
-	background-color:#6f72dc;
+	background-color:black;
 }
 
 .budget-content{
