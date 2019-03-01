@@ -321,17 +321,33 @@ ul.balance-total li.net-worth span:last-child{
 	color:black;
 	font-size:15px;
 	border:0;
+	outline: 0;
 }
 
 .budget-btn:hover{
 	background-color: black;
 	color: white;
+	outline: 0;
 }
 .budget-btn:active{
-	background-color: rgba(40,40,40,1);
-	color: white;
+	 background-color: rgba(40,40,40,1);
+	 color: white;
+	 outline: 0;
+ }
+
+.budget-btn:focus,
+.budget-btn:active:focus,
+.budget-btn.active:focus,
+.budget-btn.focus,
+.budget-btn:active.focus,
+.budget-btn.active.focus {
 	outline: none;
+	border-color: transparent;
+	box-shadow:none;
 }
+
+
+
 
 .budget-left-text span{
 	font-size: 13px;
@@ -355,6 +371,55 @@ ul.balance-total li.net-worth span:last-child{
 .right{
 	float: right;
 }
+.left{
+	float: left;
+}
 
 
+.budget-list-btn{
 
+	background-color: white;
+
+	font-size:15px;
+
+}
+.budget-list-btn:focus,
+.budget-list-btn:active:focus,
+.budget-list-btn.active:focus,
+.budget-list-btn.focus,
+.budget-list-btn:active.focus,
+.budget-list-btn.active.focus {
+	outline: none;
+	border-color: transparent;
+	box-shadow:none;
+}
+
+#b1{
+
+}
+
+#b2{
+
+}
+
+#b3{
+
+}
+
+.activated{
+	color: orange;
+}
+.deactivated{
+	display: none;
+}
+
+.block-activated{
+
+}
+.block-deactivated{
+	display: none;
+}
+
+.budget-block ul li{
+	list-style: none;
+}
