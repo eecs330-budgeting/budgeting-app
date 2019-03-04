@@ -163,7 +163,7 @@
               <header class="card-header transparent">Warnings</header>
               <div class="card-content" id="warnings">
                 <ul>
-                  <li class="card-warnings">
+                  <li class="card-warnings" id="first-warning">
                     <div class="warnings-header">
                       <h3>
                         <div>
@@ -180,9 +180,9 @@
                           </a>
                         </div>
                         <span>
-                          <a href="#" class="btn"
+                          <button class="btn" onclick="closeHint()"
                             ><i class="fas fa-times-circle"></i
-                          ></a>
+                          ></button>
                         </span>
                       </h3>
                     </div>
@@ -211,8 +211,8 @@
                             <i class="fas fa-shopping-cart"></i>
                           </span>
                           <div class="purchase-title">
-                            <span>Get-together</span>
-                            <span>$ 20</span>
+                            <span id="pur-cates">Get-together</span>
+                            <span id="pur-cost">$ 20</span>
                           </div>
                         </div>
                         <span>
@@ -443,7 +443,8 @@
                       class="form-check-input"
                       type="checkbox"
                       id="inlineCheckbox1"
-                      value="option1"
+                      name="editpurchaseType"
+                      value="Get-together"
                       checked
                     />
                     <label class="form-check-label" for="inlineCheckbox1"
@@ -454,8 +455,9 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      id="inlineCheckbox1"
-                      value="option1"
+                      id="inlineCheckbox2"
+                      name="editpurchaseType"
+                      value="Food"
                     />
                     <label class="form-check-label" for="inlineCheckbox1"
                       >Food</label
@@ -465,8 +467,9 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      id="inlineCheckbox2"
-                      value="option2"
+                      id="inlineCheckbox3"
+                      name="editpurchaseType"
+                      value="Rent"
                     />
                     <label class="form-check-label" for="inlineCheckbox2"
                       >Rent</label
@@ -476,8 +479,9 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      id="inlineCheckbox3"
-                      value="option3"
+                      name="editpurchaseType"
+                      id="inlineCheckbox4"
+                      value="Activity Cost"
                     />
                     <label class="form-check-label" for="inlineCheckbox3"
                       >Activity Cost</label
@@ -487,8 +491,9 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      id="inlineCheckbox1"
-                      value="option1"
+                      name="editpurchaseType"
+                      id="inlineCheckbox5"
+                      value="Going Out"
                     />
                     <label class="form-check-label" for="inlineCheckbox4"
                       >Going Out</label
@@ -498,8 +503,9 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      id="inlineCheckbox2"
-                      value="option2"
+                      name="editpurchaseType"
+                      id="inlineCheckbox6"
+                      value="Entertainment"
                     />
                     <label class="form-check-label" for="inlineCheckbox5"
                       >Entertainment</label
@@ -530,7 +536,7 @@
                   <input
                     type="text"
                     class="form-control buget-radius"
-                    id="validationCustom01"
+                    id="editmemo"
                     placeholder="Say something!"
                     value=""
                     required
@@ -543,9 +549,9 @@
                   <input
                     type="text"
                     class="form-control buget-radius"
-                    id="validationCustom01"
+                    id="editcost"
                     placeholder="$$$"
-                    value="$20"
+                    value="20"
                     required
                   />
                 </div>
@@ -556,11 +562,11 @@
                   <input
                     type="date"
                     class="form-control buget-radius"
-                    id="validationCustom02"
+                    id="editdate"
                     name="trip-start"
-                    value="2019-02-11"
+                    value=""
                     min="2019-01-01"
-                    max="2019-12-31"
+                    max="2019-12-31",
                   />
                 </div>
               </div>
@@ -575,6 +581,7 @@
               </button>
               <button
                 type="button"
+                onclick="edit()"
                 class="btn btn-primary budget-radius primary-color border-0"
               >
                 Edited
@@ -738,28 +745,16 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="js/index.js"></script>
     <script>
+      document.querySelector("#date").valueAsDate = new Date();
+      document.querySelector("#editdate").valueAsDate = new Date();
       $(document).ready(function() {
         $(function() {
           $('[data-toggle="popover"]').popover();
           var today = new Date();
           var dd = today.getDate();
           var mm = today.getMonth() + 1; //January is 0!
-          var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-          var mS = [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "June",
-            "July",
-            "Aug",
-            "Sept",
-            "Oct",
-            "Nov",
-            "Dec"
-          ];
           var d = today.getDay();
           var yyyy = today.getFullYear();
           if (dd < 10) {
@@ -772,12 +767,9 @@
           if (mm < 10) {
             mm = "0" + mm;
           }
-          var date_val = yyyy + "-" + mm + "-" + dd;
-          console.log(date_val);
-          $("#date").val(date_val);
         });
       });
     </script>
-    <script src="js/index.js"></script>
+    
   </body>
 </html>
