@@ -22,11 +22,14 @@
       integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/warning.css" />
-      <title>BudgetForNow</title>
+    <title>BudgetForNow</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -159,81 +162,98 @@
             <div class="budget-card-view">
               <header class="card-header transparent">Warnings</header>
               <div class="card-content" id="warnings">
-                  <ul>
-                      <li class="card-warnings">
-                        <div class="warnings-header">
-                          <h3>
-                            <div>
-                            <a href="" class="warningLink" data-toggle="modal" data-target="#hintModal" >
-                              <span class="icon">
-                                  <i class="fas fa-exclamation-triangle red"></i>
-                              </span>
-                              <span>Budget exceed for now: $200</span>
-                            </a>
-                            </div>
-                            <span>
-                                <a href="#" class="btn"><i class="fas fa-times-circle"></i></a>
+                <ul>
+                  <li class="card-warnings">
+                    <div class="warnings-header">
+                      <h3>
+                        <div>
+                          <a
+                            href=""
+                            class="warningLink"
+                            data-toggle="modal"
+                            data-target="#hintModal"
+                          >
+                            <span class="icon">
+                              <i class="fas fa-exclamation-triangle red"></i>
                             </span>
-                          </h3>
+                            <span>Budget exceed for now: $200</span>
+                          </a>
                         </div>
-                      </li>
-                    </ul>
+                        <span>
+                          <a href="#" class="btn"
+                            ><i class="fas fa-times-circle"></i
+                          ></a>
+                        </span>
+                      </h3>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="budget-card-view">
-                <header class="card-header transparent">Recent Purchases</header>
-                <div class="card-content" id="purchases">
-                    <button
-                    type="button"
-                    class="btn btn-primary btn-lg purchases-btn"
-                    data-toggle="modal"
-                    data-target="#addModal"
-                  >
-                    Add Purchase
-                  </button>
-                    <div class="purchases-date"><span >Monday, Feb 11</span></div>
-                    <ul>
-                        <li class="card-purchases">
-                          <div class="purchases-header">
-                            <h3>
-                              <div class="purchase-content">
-                                <span class="icon">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </span>
-                                <div class="purchase-title">
-                                    <span>Get-together</span>
-                                    <span>$ 20</span>
-                                </div>
-                              </div>
-                              <span>
-                                  <a href="#" class="btn" data-toggle="modal"
-                                  data-target="#editModal"><i class="far fa-edit"></i></a>
-                              </span>
-                            </h3>
+              <header class="card-header transparent">Recent Purchases</header>
+              <div class="card-content" id="purchases">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg purchases-btn"
+                  data-toggle="modal"
+                  data-target="#addModal"
+                >
+                  Add Purchase
+                </button>
+                <div class="purchases-date"><span id="now-date"></span></div>
+                <ul class="purchase-each">
+                  <li class="card-purchases">
+                    <div class="purchases-header">
+                      <h3>
+                        <div class="purchase-content">
+                          <span class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                          </span>
+                          <div class="purchase-title">
+                            <span>Get-together</span>
+                            <span>$ 20</span>
                           </div>
-                        </li>
-                        <li class="card-purchases">
-                            <div class="purchases-header">
-                              <h3>
-                                <div class="purchase-content">
-                                  <span class="icon">
-                                      <i class="fas fa-shopping-cart"></i>
-                                  </span>
-                                  <div class="purchase-title">
-                                      <span>Going out</span>
-                                      <span>$ 100</span>
-                                  </div>
-                                </div>
-                                <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                    data-target="#editModal"><i class="far fa-edit"></i></a>
-                                </span>
-                              </h3>
-                            </div>
-                          </li>
-                      </ul>
-                </div>
+                        </div>
+                        <span>
+                          <a
+                            href="#"
+                            class="btn"
+                            data-toggle="modal"
+                            data-target="#editModal"
+                            ><i class="far fa-edit"></i
+                          ></a>
+                        </span>
+                      </h3>
+                    </div>
+                  </li>
+                  <li class="card-purchases">
+                    <div class="purchases-header">
+                      <h3>
+                        <div class="purchase-content">
+                          <span class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                          </span>
+                          <div class="purchase-title">
+                            <span>Going out</span>
+                            <span>$ 100</span>
+                          </div>
+                        </div>
+                        <span>
+                          <a
+                            href="#"
+                            class="btn"
+                            data-toggle="modal"
+                            data-target="#editModal"
+                            ><i class="far fa-edit"></i
+                          ></a>
+                        </span>
+                      </h3>
+                    </div>
+                  </li>
+                </ul>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -257,6 +277,179 @@
               <div class="form-group row">
                 <div class="col-sm-3">Type of Purchase</div>
                 <div class="col-sm-9">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      name="purchaseType"
+                      value="Food"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >Food</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox2"
+                      name="purchaseType"
+                      value="Rent"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox2"
+                      >Rent</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox3"
+                      name="purchaseType"
+                      value="Activity Cost"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox3"
+                      >Activity Cost</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox4"
+                      name="purchaseType"
+                      value="Going Out"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox4"
+                      >Going Out</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox5"
+                      name="purchaseType"
+                      value="Entertainment"
+                    />
+                    <label class="form-check-label" for="inlineCheckbox5"
+                      >Entertainment</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <div class="dropdown show ">
+                      <a
+                        id="more"
+                        class="btn dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        ...
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="more">
+                        <a class="dropdown-item" href="#">Tuition</a>
+                        <a class="dropdown-item" href="#">Customize your tag</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3">Memo</div>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control buget-radius"
+                    id="memo"
+                    name="memo"
+                    placeholder="Say something!"
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3">Cost</div>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control buget-radius"
+                    id="cost"
+                    name="cost"
+                    placeholder="$$$"
+                    value=""
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3">Date</div>
+                <div class="col-sm-9">
+                  <input
+                    type="date"
+                    class="form-control buget-radius"
+                    id="date"
+                    name="date"
+                    value=""
+                    min="2019-01-01"
+                    max="2019-12-31"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer bugdet-modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary budget-radius transparent"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary budget-radius primary-color border-0"
+                onclick="submit()"
+              >
+                Submit purchase
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of addModal-->
+      <!-- editModal -->
+      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="editModal">
+        <div class="modal-dialog bugdet-modal border-0" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Your Purchase</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" height>
+              <div class="form-group row">
+                <div class="col-sm-3">Type of Purchase</div>
+                <div class="col-sm-9">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="inlineCheckbox1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineCheckbox1"
+                      >Get-together</label
+                    >
+                  </div>
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -325,27 +518,25 @@
                       </a>
                       <div class="dropdown-menu" aria-labelledby="more">
                         <a class="dropdown-item" href="#">Tuition</a>
-                        <a class="dropdown-item" href="#"
-                          >Customize your tag</a
-                        >
+                        <a class="dropdown-item" href="#">Customize your tag</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="form-group row">
-                  <div class="col-sm-3">Memo</div>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control buget-radius"
-                      id="validationCustom01"
-                      placeholder="Say something!"
-                      value=""
-                      required
-                    />
-                  </div>
+                <div class="col-sm-3">Memo</div>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control buget-radius"
+                    id="validationCustom01"
+                    placeholder="Say something!"
+                    value=""
+                    required
+                  />
                 </div>
+              </div>
               <div class="form-group row">
                 <div class="col-sm-3">Cost</div>
                 <div class="col-sm-9">
@@ -354,7 +545,7 @@
                     class="form-control buget-radius"
                     id="validationCustom01"
                     placeholder="$$$"
-                    value=""
+                    value="$20"
                     required
                   />
                 </div>
@@ -367,7 +558,7 @@
                     class="form-control buget-radius"
                     id="validationCustom02"
                     name="trip-start"
-                    value="2019-02-24"
+                    value="2019-02-11"
                     min="2019-01-01"
                     max="2019-12-31"
                   />
@@ -386,179 +577,12 @@
                 type="button"
                 class="btn btn-primary budget-radius primary-color border-0"
               >
-                Submit purchase
+                Edited
               </button>
             </div>
           </div>
         </div>
       </div>
-      <!-- End of addModal-->
-      <!-- editModal -->
-      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="editModal">
-          <div class="modal-dialog bugdet-modal border-0" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Edit Your Purchase</h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body" height>
-                <div class="form-group row">
-                  <div class="col-sm-3">Type of Purchase</div>
-                  <div class="col-sm-9">
-                      <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            id="inlineCheckbox1"
-                            value="option1"
-                            checked
-                          />
-                          <label class="form-check-label" for="inlineCheckbox1"
-                            >Get-together</label
-                          >
-                        </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox1"
-                        >Food</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox2"
-                        >Rent</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox3"
-                        value="option3"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox3"
-                        >Activity Cost</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox4"
-                        >Going Out</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="inlineCheckbox2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineCheckbox5"
-                        >Entertainment</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <div class="dropdown show ">
-                        <a
-                          id="more"
-                          class="btn dropdown-toggle"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          ...
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="more">
-                          <a class="dropdown-item" href="#">Tuition</a>
-                          <a class="dropdown-item" href="#"
-                            >Customize your tag</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-3">Memo</div>
-                    <div class="col-sm-9">
-                      <input
-                        type="text"
-                        class="form-control buget-radius"
-                        id="validationCustom01"
-                        placeholder="Say something!"
-                        value=""
-                        required
-                      />
-                    </div>
-                  </div>
-                <div class="form-group row">
-                  <div class="col-sm-3">Cost</div>
-                  <div class="col-sm-9">
-                    <input
-                      type="text"
-                      class="form-control buget-radius"
-                      id="validationCustom01"
-                      placeholder="$$$"
-                      value="$20"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-3">Date</div>
-                  <div class="col-sm-9">
-                    <input
-                      type="date"
-                      class="form-control buget-radius"
-                      id="validationCustom02"
-                      name="trip-start"
-                      value="2019-02-11"
-                      min="2019-01-01"
-                      max="2019-12-31"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer bugdet-modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary budget-radius transparent"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary budget-radius primary-color border-0"
-                >
-                  Edited
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       <!-- End of editModal-->
       <!-- hintModal -->
       <div class="modal modal-wrap" tabindex="-1" role="dialog" id="hintModal">
@@ -662,8 +686,42 @@
       $(document).ready(function() {
         $(function() {
           $('[data-toggle="popover"]').popover();
+          var today = new Date();
+          var dd = today.getDate();
+          var mm = today.getMonth() + 1; //January is 0!
+          var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+          var mS = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "June",
+            "July",
+            "Aug",
+            "Sept",
+            "Oct",
+            "Nov",
+            "Dec"
+          ];
+          var d = today.getDay();
+          var yyyy = today.getFullYear();
+          if (dd < 10) {
+            dd = "0" + dd;
+          }
+
+          today = days[d] + ", " + mS[mm - 1] + " " + dd + " " + yyyy;
+
+          $("#now-date").text(today);
+          if (mm < 10) {
+            mm = "0" + mm;
+          }
+          var date_val = yyyy + "-" + mm + "-" + dd;
+          console.log(date_val);
+          $("#date").val(date_val);
         });
       });
     </script>
+    <script src="js/index.js"></script>
   </body>
 </html>
