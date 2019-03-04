@@ -116,7 +116,7 @@
                         </h6>
                       </li>
                       <li>
-                        <a href="#" class="add-another-ba"
+                        <a href="account.html" class="add-another-ba" 
                           >+ Link another bank account</a
                         >
                       </li>
@@ -134,7 +134,7 @@
                     </div>
                     <ul class="bank-list">
                       <li>
-                        <a href="#" class="add-another-ba"
+                        <a href="account.html" class="add-another-ba" 
                           >+ Link another bank account</a
                         >
                       </li>
@@ -666,6 +666,62 @@
         </div>
       </div>
       <!-- End of hintModal-->
+      <!-- addCardModal -->
+      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="addCardModal">
+        <div class="modal-dialog bugdet-modal border-0" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add A Card</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" height>
+                <div class="form-group row">
+                    <div class="col-sm-3">Bank Name</div>
+                    <div class="col-sm-9">
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="1">Bank Of American</option>
+                        <option value="2">Chase</option>
+                        <option value="3">Discover</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-sm-3">Account Name</div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="account" placeholder="Enter your account name" value="" required>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-sm-3">Password</div>
+                      <div class="col-sm-9">
+                        <input type="password" class="form-control buget-radius" id="password" value="" required>
+                      </div>
+                  </div>
+            </div>
+            <div class="modal-footer bugdet-modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary budget-radius transparent"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary budget-radius primary-color border-0">
+                Sign in
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of addCardModal-->
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/account.css" />
     <title>Account</title>
   </head>
   <body>
@@ -124,31 +125,40 @@
               </div>
               <div class="col-md-8">
                   <div class="budget-card-view">
-                      <header class="card-header transparent">Cards <a href="#" class="add-a-card"><i class="fas fa-plus" ></i></a></header>
-                      <div class="card-content" >
-                          <div class="card-wrapper">
+                      <header class="card-header transparent">Cards <a href="#" class="add-a-card" data-toggle="modal"
+                        data-target="#addCardModal"><i class="fas fa-plus" ></i></a></header>
+                      <div class="card-content" id="cards-list">
+                          <div class="card-wrapper" id="chase">
                               <div class="card budget-card border-0 ">
                                       <div class="card-body">
-                                        <img class="card-logo" src="./images/4f7b2347-878a-4ae3-b192-5f5002ff7d2e.png"/>
+                                        <img class="card-logo" src="./images/chase.png"/>
                                           <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                                           <div class="card-text budget-card-text">
                                             <p>CHASE COLLEGE (...xxxx)</p>
                                             <p>$ 200</p>
                                           </div>
-                                          <a href="#" class="card-link add-another-ba">Manage This Card</a>
+                                          <a class="card-link add-another-ba" data-toggle="collapse" href="#actions"><i class="fas fa-caret-down dropdownicon"></i>Manage This Card</a>
+                                          <div class="collapse action-collapse" id="actions">
+                                              <a class="Cardaction btn" data-toggle="collapse" href="#"><i class="far fa-eye"></i></a>
+                                            <button class="Cardaction btn" data-toggle="collapse" onclick="remove('chase')"><i class="far fa-trash-alt"></i></button>
+                                          </div>
                                       </div>
                               </div>
                           </div>
-                          <div class="card-wrapper">
+                          <div class="card-wrapper" id="Boa">
                               <div class="card budget-card border-0 ">
                                       <div class="card-body">
-                                        <img class="card-logo" src="./images/Bank_of_America_logo.png"/>
+                                        <img class="card-logo" src="./images/boa.png"/>
                                           <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                                           <div class="card-text budget-card-text">
                                             <p>BOA CASH REWARDS (...xxxx)</p>
                                             <p>$ 70</p>
                                           </div>
-                                          <a href="#" class="card-link add-another-ba">Manage This Card</a>
+                                          <a class="card-link add-another-ba" data-toggle="collapse" href="#Boa-actions"><i class="fas fa-caret-down dropdownicon"></i>Manage This Card</a>
+                                          <div class="collapse action-collapse" id="Boa-actions">
+                                              <a class="Cardaction btn" data-toggle="collapse" href="#"><i class="far fa-eye"></i></a>
+                                            <button class="Cardaction btn" data-toggle="collapse" onclick="remove('Boa')"><i class="far fa-trash-alt"></i></button>
+                                          </div>
                                       </div>
                               </div>
                           </div>
@@ -160,12 +170,12 @@
 
        
         
-      <!-- addModal -->
-      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="addModal">
+      <!-- addCardModal -->
+      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="addCardModal">
         <div class="modal-dialog bugdet-modal border-0" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Add Purchase</h5>
+              <h5 class="modal-title">Add A Card</h5>
               <button
                 type="button"
                 class="close"
@@ -177,54 +187,26 @@
             </div>
             <div class="modal-body" height>
                 <div class="form-group row">
-                    <div class="col-sm-3">Type of Purchase</div>
+                    <div class="col-sm-3">Bank Name</div>
                     <div class="col-sm-9">
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                          <label class="form-check-label" for="inlineCheckbox1">Food</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox2">Rent</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                          <label class="form-check-label" for="inlineCheckbox3">Activity Cost</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                          <label class="form-check-label" for="inlineCheckbox4">Going Out</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox5">Entertainment</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                          <div class="dropdown show ">
-                          <a id="more" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ...
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="more">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
-                        </div>
-                      </div>
+                      <select class="custom-select" id="BankName">
+                        <option selected>Choose...</option>
+                        <option value="1">Bank Of American</option>
+                        <option value="2">Chase</option>
+                        <option value="3">Discover</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group row">
-                      <div class="col-sm-3">Cost</div>
+                      <div class="col-sm-3">Account Name</div>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control buget-radius" id="validationCustom01" placeholder="$$$" value="" required>
+                          <input type="text" class="form-control buget-radius" id="account" placeholder="Enter your account name" value="" required>
                       </div>
                   </div>
                   <div class="form-group row">
-                      <div class="col-sm-3">Date</div>
+                      <div class="col-sm-3">Password</div>
                       <div class="col-sm-9">
-                          <input type="date" class="form-control buget-radius" id="validationCustom02" name="trip-start"
-                          value="2018-07-22"
-                          min="2018-01-01" max="2018-12-31">
+                        <input type="password" class="form-control buget-radius" id="password" value="" required>
                       </div>
                   </div>
             </div>
@@ -236,14 +218,14 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary budget-radius primary-color border-0">
-                Submit purchase
+              <button onclick="addACard()" type="button" class="btn btn-primary budget-radius primary-color border-0">
+                Sign in
               </button>
             </div>
           </div>
         </div>
       </div>
-      <!-- End of addModal-->
+      <!-- End of addCardModal-->
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -260,5 +242,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="js/account.js"></script>
   </body>
 </html>
