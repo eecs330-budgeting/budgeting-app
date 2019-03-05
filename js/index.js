@@ -20,6 +20,7 @@ function submit(){
     let cate = list
     let memo = $( '#memo' ).val()
     let cost = $( '#cost' ).val()
+
     if(cate.length == 0){
         alert("Please enter all fields correctly!");
         return;

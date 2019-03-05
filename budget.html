@@ -632,24 +632,24 @@
                         <div class="col-sm-3">Type of Budget</div>
                         <div class="col-sm-9">
                             <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1" onclick="cg(this)">Food</button> $ <span id="it1"> 0</span>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1" onclick="cg(this)">Food</button> $ <span id="it1">0</span>
 
                             </p>
                             <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2" onclick="cg(this)">Rent</button> $ <span id="it2"> 0</span>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2" onclick="cg(this)">Rent</button> $ <span id="it2">0</span>
 
                             </p>
                             <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a3" onclick="cg(this)">Online Shopping</button> $ <span id="it3"> 0</span>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a3" onclick="cg(this)">Online Shopping</button> $ <span id="it3">0</span>
 
                             </p>
                             <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a4" onclick="cg(this)">Entertainment</button> $ <span id="it4"> 0</span>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a4" onclick="cg(this)">Entertainment</button> $ <span id="it4">0</span>
 
                             </p>
                             <p>
 
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a5" onclick="cg(this)">Others</button> $ <span id="it5"> 0</span>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a5" onclick="cg(this)">Others</button> $ <span id="it5">0</span>
                             </p>
                         </div>
                     </div>
@@ -889,8 +889,8 @@
 
             i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
 
-            if(!Number(i.innerHTML)){
-                alert("Cost should be number only, reenter your cost!");
+            if( i.innerHTML != '0' && !Number(i.innerHTML)){
+                alert("Budget amount should be number only, reenter your amount!");
                 return
             }
 
