@@ -77,7 +77,7 @@
                             </li>
                             <li class="card-balance">
 
-                                <ul class="bank-list">
+                                <ul class="bank-list bank-list1">
 
                                     <li>
                                         <button type="button" id = "button1" class=" btn btn-block budget-list-btn"  onclick="activate(this.id)">
@@ -122,16 +122,18 @@
 
                                     </li>
 
-                                    <li class="card-balance">
-                                        <button type="button"
-                                                class="btn btn-lg budget-btn btn-block"
-                                                data-toggle="modal"
-                                                data-target="#addModal">
-                                            Add New Budget
-                                        </button>
-                                    </li>
+
 
                                 </ul>
+
+                            <li class="card-balance">
+                                <button type="button"
+                                        class="btn btn-lg budget-btn btn-block"
+                                        data-toggle="modal"
+                                        data-target="#addModal">
+                                    Add New Budget
+                                </button>
+                            </li>
                             </li>
 
 
@@ -143,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 add-new">
                 <div class="budget-card-view block-deactivated" id="button1b">
                     <header class="card-header transparent">Budget 1</header>
                     <div class="card-content budget-block">
@@ -151,7 +153,7 @@
 
 
                         <div class="budget-left-text"><span >Budget Exceeded</span>
-                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="modal" data-target="#addModal">
+                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" title="We are working on it" data-toggle="modal" data-target="#addModal">
                                 Edit Budget
                             </button>
                         </div>
@@ -302,7 +304,7 @@
 
 
                         <div class="budget-left-text"><span >Budget Exceeded</span>
-                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="modal" data-target="#addModal">
+                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" title="We are working on it" data-toggle="modal" data-target="#editModal">
                                 Edit Budget
                             </button>
                         </div>
@@ -447,17 +449,17 @@
 
                 </div>
                 <div class="budget-card-view block-deactivated" id="button3b">
-                    <header class="card-header transparent">Budget 3</header>
+                    <header class="card-header transparent s3">Budget 3</header>
                     <div class="card-content budget-block">
 
 
 
                         <div class="budget-left-text"><span >Budget Exceeded</span>
-                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="modal" data-target="#addModal">
+                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" title="We are working on it" data-toggle="modal" data-target="#editModal">
                                 Edit Budget
                             </button>
                         </div>
-                        <div class="budget-left-number"><span >$0.00</span>
+                        <div class="budget-left-number"><span id="s3a">$0.00</span>
 
                         </div>
 
@@ -473,12 +475,12 @@
                                             <div class="budget-left-second-number"><span >$1400.00</span></div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="budget-left-second-text"><span >Budget Amount</span></div>
-                                            <div class="budget-left-second-number"><span >$1600.00</span></div>
+                                            <div class="budget-left-second-text"><span > </span></div>
+                                            <div class="budget-left-second-number"><span id="s3b">$1600.00</span></div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="budget-left-second-text"><span >Days Left</span></div>
-                                            <div class="budget-left-second-number"><span >7</span></div>
+                                            <div class="budget-left-second-number"><span id="s3c">7</span></div>
 
                                         </div>
 
@@ -506,7 +508,7 @@
                                 </span>
                                             <div class="purchase-title">
                                                 <span>Food</span>
-                                                <span>$ 500</span>
+                                                <span id="s31">$ 500</span>
                                             </div>
                                         </div>
                                         <span>
@@ -525,7 +527,7 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Rent</span>
-                                                <span>$ 600</span>
+                                                <span id="s32">$ 600</span>
                                             </div>
                                         </div>
                                         <span>
@@ -544,7 +546,7 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Online Shopping</span>
-                                                <span>$ 200</span>
+                                                <span id="s33">$ 200</span>
                                             </div>
                                         </div>
                                         <span>
@@ -563,7 +565,7 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Entertainment</span>
-                                                <span>$ 50</span>
+                                                <span id="s34">$ 50</span>
                                             </div>
                                         </div>
                                         <span>
@@ -582,7 +584,7 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Others</span>
-                                                <span>$ 250</span>
+                                                <span id="s35">$ 250</span>
                                             </div>
                                         </div>
                                         <span>
@@ -597,6 +599,7 @@
                     </div>
 
                 </div>
+
 
 
 
@@ -693,6 +696,7 @@
                     <button
                             type="button"
                             class="btn btn-primary budget-radius primary-color border-0"
+
                             onclick="submit()"
                     >
                         Submit
@@ -702,6 +706,103 @@
         </div>
     </div>
     <!--end model-->
+
+
+    <!--edit model-->
+
+    <!--<div class="modal modal-wrap" tabindex="-1" role="dialog" id="editModal">-->
+        <!--<div class="modal-dialog bugdet-modal border-0" role="document">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<h5 class="modal-title">Edit Budget</h5>-->
+                    <!--<button-->
+                            <!--type="button"-->
+                            <!--class="close"-->
+                            <!--data-dismiss="modal"-->
+                            <!--aria-label="Close"-->
+                    <!--&gt;-->
+                        <!--<span aria-hidden="true">&times;</span>-->
+                    <!--</button>-->
+                <!--</div>-->
+                <!--<div class="modal-body" height>-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-sm-3">Type of Budget</div>-->
+                        <!--<div class="col-sm-9">-->
+                            <!--<p>-->
+                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1e" onclick="cge(this)">Food</button> $ <span id="eit1"> 0</span>-->
+
+                            <!--</p>-->
+                            <!--<p>-->
+                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2e" onclick="cge(this)">Rent</button> $ <span id="eit2"> 0</span>-->
+
+                            <!--</p>-->
+                            <!--<p>-->
+                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a3e" onclick="cge(this)">Online Shopping</button> $ <span id="eit3"> 0</span>-->
+
+                            <!--</p>-->
+                            <!--<p>-->
+                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a4e" onclick="cge(this)">Entertainment</button> $ <span id="eit4"> 0</span>-->
+
+                            <!--</p>-->
+                            <!--<p>-->
+
+                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a5e" onclick="cge(this)">Others</button> $ <span id="eit5"> 0</span>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-sm-3">Nickname</div>-->
+                        <!--<div class="col-sm-9">-->
+                            <!--<input-->
+                                    <!--type="text"-->
+                                    <!--class="form-control buget-radius"-->
+                                    <!--id="ememo"-->
+                                    <!--name="memo"-->
+
+                                    <!--value=""-->
+                                    <!--required-->
+                            <!--/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-sm-3">Total</div>-->
+                        <!--<div class="col-sm-9">-->
+                            <!--$ <span id="eta"> 0</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group row">-->
+                        <!--<div class="col-sm-3">Period</div>-->
+                        <!--<div class="col-sm-9">-->
+                            <!--<select class="custom-select" id="eperiod">-->
+                                <!--<option selected>Choose...</option>-->
+                                <!--<option value="1">7 Days</option>-->
+                                <!--<option value="2">14 Days</option>-->
+                                <!--<option value="3">30 Days</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="modal-footer bugdet-modal-footer">-->
+                    <!--<button-->
+                            <!--type="button"-->
+                            <!--class="btn btn-secondary budget-radius transparent"-->
+                            <!--data-dismiss="modal"-->
+                    <!--&gt;-->
+                        <!--Close-->
+                    <!--</button>-->
+                    <!--<button-->
+                            <!--type="button"-->
+                            <!--class="btn btn-primary budget-radius primary-color border-0"-->
+                            <!--onclick="edit()"-->
+                    <!--&gt;-->
+                        <!--Submit-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--end edit-->
+
 </div>
 
 
@@ -788,6 +889,11 @@
 
             i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
 
+            if(!Number(i.innerHTML)){
+                alert("Cost should be number only, reenter your cost!");
+                return
+            }
+
 
         } else {
 
@@ -799,6 +905,41 @@
 
     }
 
+</script>
+
+<!--<script>-->
+
+    <!--cge = function (obj) {-->
+
+        <!--var eo = document.getElementById("eit" + obj.id.toString().substr(1));-->
+        <!--var ei = document.getElementById("eta");-->
+
+        <!--if (eo.childNodes[0].value) {-->
+
+            <!--eo.innerHTML = eo.childNodes[0].value;-->
+            <!--var i1 = document.getElementById("eit1").innerText-->
+            <!--var i2 = document.getElementById("eit2").innerText-->
+            <!--var i3 = document.getElementById("eit3").innerText-->
+            <!--var i4 = document.getElementById("eit4").innerText-->
+            <!--var i5 = document.getElementById("eit5").innerText-->
+
+            <!--ei.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);-->
+
+
+        <!--} else {-->
+
+            <!--eo.innerHTML = "<input type='text' class='add-budget-input' value='" + document.getElementById("eit" + obj.id.toString().substr(1)).innerHTML + "' />";-->
+
+        <!--}-->
+
+    <!--}-->
+
+<!--</script>-->
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
 
 <script src="js/budget.js"></script>
