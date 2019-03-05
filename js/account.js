@@ -1,4 +1,17 @@
-
+function updateProfile(){
+    let uname = $('#edituname').val();
+    let bday = $( '#editdate' ).val();
+    let address = $( '#editaddress' ).val();
+    let loc = $('#editlocation').val();
+    let phone = $('#editphone').val();
+    
+    $('span.uname').text(uname);
+    $( '#bday' ).text(bday);
+    $( '#address' ).text(address);
+    $('#loc').text(loc);
+    $('#phone').text(phone);
+    $('#editprofileModal').modal('hide');
+}
 function addACard(){
     let banknameid = $( '#BankName' ).val();
     let appendContent = '';

@@ -61,7 +61,8 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="budget-card-view">
-                  <header class="card-header transparent">Profile <a href="#" class="add-a-card"><i class="fas fa-edit" ></i></a></header>
+                  <header class="card-header transparent">Profile <a href="#" data-toggle="modal"
+                    data-target="#editprofileModal" class="add-a-card"><i class="fas fa-edit" ></i></a></header>
                   <div class="card-content" id="profile" >
                       <ul>
                           <li class="card-balance">
@@ -71,7 +72,7 @@
                                     <i class="fas fa-user-circle"></i>
                                   <span>Name</span>
                                 </div>
-                                <span class="balance-amount">First, Last</span>
+                                <span class="balance-amount uname" id=“uname” name="usrname">First, Last</span>
                               </h3>
                             </div>
                           </li>
@@ -82,7 +83,7 @@
                                       <i class="fas fa-birthday-cake"></i>
                                     <span>Birthday</span>
                                   </div>
-                                  <span class="balance-amount">mm/dd/yyyy</span>
+                                  <span class="balance-amount" id="bday">yyyy-mm-dd</span>
                                 </h3>
                               </div>
                             </li>
@@ -93,7 +94,7 @@
                                         <i class="far fa-address-card"></i>
                                       <span>Address</span>
                                     </div>
-                                    <span class="balance-amount"> xxxx Ave</span>
+                                    <span class="balance-amount" id="address"> xxxx Ave</span>
                                   </h3>
                                 </div>
                               </li>
@@ -104,7 +105,7 @@
                                           <i class="fas fa-location-arrow"></i>
                                         <span>Location</span>
                                       </div>
-                                      <span class="balance-amount">Evanston, IL</span>
+                                      <span class="balance-amount" id="loc">Evanston, IL</span>
                                     </h3>
                                   </div>
                                 </li>
@@ -113,9 +114,9 @@
                                       <h3>
                                         <div>
                                             <i class="fas fa-phone"></i>
-                                          <span>Phone</span>
+                                          <span >Phone</span>
                                         </div>
-                                        <span class="balance-amount">xxxxxxx</span>
+                                        <span class="balance-amount" id="phone">xxxxxxx</span>
                                       </h3>
                                     </div>
                                   </li>
@@ -226,6 +227,77 @@
         </div>
       </div>
       <!-- End of addCardModal-->
+      <!-- editprofileModal -->
+      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="editprofileModal">
+          <div class="modal-dialog bugdet-modal border-0" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit your profile</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" height>
+                  <div class="form-group row">
+                      <div class="col-sm-3">Name</div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="edituname" value="First, Last" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Birthday</div>
+                        <div class="col-sm-9">
+                            <input
+                            type="date"
+                            class="form-control buget-radius"
+                            id="editdate"
+                            name="date"
+                            value=""
+                            min="1900-01-01"
+                            max="2019-12-31"
+                          />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Address</div>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="editaddress" value="xxxx Ave" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Location</div>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="editlocation" value="Evanston, IL" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Phone</div>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="editphone" value="xxxxxxx" required>
+                        </div>
+                    </div>
+              </div>
+              <div class="modal-footer bugdet-modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary budget-radius transparent"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button onclick="updateProfile()" type="button" class="btn btn-primary budget-radius primary-color border-0">
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of addCardModal-->
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
