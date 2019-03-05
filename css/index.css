@@ -422,3 +422,11 @@ ul.balance-total li.net-worth span:last-child{
 .budget-block ul li{
 	list-style: none;
 }
+
+.add-budget-button{
+	width: 220px;
+}
+
+.add-budget-input{
+	width: 70px;
+}

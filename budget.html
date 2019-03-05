@@ -123,7 +123,10 @@
                                     </li>
 
                                     <li class="card-balance">
-                                        <button type="button" class="btn btn-lg budget-btn btn-block" data-toggle="modal" data-target="#addModal">
+                                        <button type="button"
+                                                class="btn btn-lg budget-btn btn-block"
+                                                data-toggle="modal"
+                                                data-target="#addModal">
                                             Add New Budget
                                         </button>
                                     </li>
@@ -603,6 +606,102 @@
 
     </div>
     </div>
+
+
+
+    <!--model-->
+    <div class="modal modal-wrap" tabindex="-1" role="dialog" id="addModal">
+        <div class="modal-dialog bugdet-modal border-0" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Budget</h5>
+                    <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" height>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Type of Budget</div>
+                        <div class="col-sm-9">
+                            <p>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1" onclick="cg(this)">Food</button> $ <span id="it1"> 0</span>
+
+                            </p>
+                            <p>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2" onclick="cg(this)">Rent</button> $ <span id="it2"> 0</span>
+
+                            </p>
+                            <p>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a3" onclick="cg(this)">Online Shopping</button> $ <span id="it3"> 0</span>
+
+                            </p>
+                            <p>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a4" onclick="cg(this)">Entertainment</button> $ <span id="it4"> 0</span>
+
+                            </p>
+                            <p>
+
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a5" onclick="cg(this)">Others</button> $ <span id="it5"> 0</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Nickname</div>
+                        <div class="col-sm-9">
+                            <input
+                                    type="text"
+                                    class="form-control buget-radius"
+                                    id="memo"
+                                    name="memo"
+
+                                    value=""
+                                    required
+                            />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Total</div>
+                        <div class="col-sm-9">
+                            $ <span id="ta"> 0</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Period</div>
+                        <div class="col-sm-9">
+                            <select class="custom-select" id="period">
+                                <option selected>Choose...</option>
+                                <option value="1">7 Days</option>
+                                <option value="2">14 Days</option>
+                                <option value="3">30 Days</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bugdet-modal-footer">
+                    <button
+                            type="button"
+                            class="btn btn-secondary budget-radius transparent"
+                            data-dismiss="modal"
+                    >
+                        Close
+                    </button>
+                    <button
+                            type="button"
+                            class="btn btn-primary budget-radius primary-color border-0"
+                            onclick="submit()"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end model-->
 </div>
 
 
@@ -630,6 +729,77 @@
     });
 </script>
 
+<script>
+    $(document).ready(function() {
+        $(function() {
+            $('[data-toggle="popover"]').popover();
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            var mS = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "June",
+                "July",
+                "Aug",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dec"
+            ];
+            var d = today.getDay();
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = "0" + dd;
+            }
+
+            today = days[d] + ", " + mS[mm - 1] + " " + dd + " " + yyyy;
+
+            $("#now-date").text(today);
+            if (mm < 10) {
+                mm = "0" + mm;
+            }
+            var date_val = yyyy + "-" + mm + "-" + dd;
+            console.log(date_val);
+            $("#date").val(date_val);
+        });
+    });
+</script>
+
+<script>
+
+    cg = function (obj) {
+
+        var o = document.getElementById("it" + obj.id.toString().substr(1));
+        var i = document.getElementById("ta");
+
+        if (o.childNodes[0].value) {
+
+            o.innerHTML = o.childNodes[0].value;
+            var i1 = document.getElementById("it1").innerText
+            var i2 = document.getElementById("it2").innerText
+            var i3 = document.getElementById("it3").innerText
+            var i4 = document.getElementById("it4").innerText
+            var i5 = document.getElementById("it5").innerText
+
+            i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
+
+
+        } else {
+
+            o.innerHTML = "<input type='text' class='add-budget-input' value='" + document.getElementById("it" + obj.id.toString().substr(
+
+                1)).innerHTML + "' />";
+
+        }
+
+    }
+
+</script>
 
 <script src="js/budget.js"></script>
 </body>
