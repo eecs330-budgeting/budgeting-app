@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css" />
+    <!--<link rel="stylesheet" href="css/html.css" />-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <title>Report</title>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Food', 300],
+          ['Entertainment', 100],
+          ['Rent', 200],
+          ['Online Shopping', 150],
+          ['Others', 50]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Money Spent on Different Categories',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script> -->
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">BudgetForNow</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html"
+                >Home <span class="sr-only">(current)</span></a
+                >
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="budget.html">Budget</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="account.html">Account</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="wrapper">
+    <div class="container home-section">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="budget-card-view">
+                    <header class="card-header transparent">Report</header>
+                    <div class="card-content" id="account-balance">
+                        <ul>
+                            <li class="card-balance">
+                                <div class="balance-header">
+                                    <h3>
+                                        <div>
+
+                                            <span>Generated Reports</span>
+                                        </div>
+
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-balance">
+
+                                <ul class="bank-list bank-list1">
+
+                                    <li>
+                                        <button type="button" id = "button1" class=" btn btn-block budget-list-btn"  onclick="activate(this.id)">
+                                            <h4>
+                                                <span>Budget 1</span>
+                                                <span id = "button1a" class="active deactivated"><span><i class="fa fa-check-square " aria-hidden="true"></i></span> Activated</span>
+
+                                            </h4>
+                                            <h6>
+                                                <span class="nickname left">Period: 14 days</span>
+                                            </h6>
+
+                                        </button>
+
+                                    </li>
+
+                                    <li>
+                                        <button id = "button2" type="button" class=" btn btn-block budget-list-btn" onclick="activate(this.id)">
+                                        <h4>
+                                            <span>Budget 2</span>
+                                            <span id = "button2a" class="activated"><span><i class="fa fa-check-square " aria-hidden="true"></i></span> Activated</span>
+
+                                        </h4>
+                                        <h6>
+                                            <span class="nickname left">Period: 30 days</span>
+                                        </h6>
+                                        </button>
+                                    </li>
+
+                                    <li>
+                                        <button type="button" id = "button3" class=" btn btn-block budget-list-btn" onclick="activate(this.id)">
+                                            <h4>
+                                                <span>Report</span>
+                                                <span id = "button3a" class="deactivated"><span><i class="fa fa-check-square " aria-hidden="true"></i></span> Activated</span>
+
+                                            </h4>
+                                            <h6>
+                                                <span class="nickname left">Period: 30 days</span>
+                                            </h6>
+
+                                        </button>
+
+                                    </li>
+
+
+
+                                </ul>
+
+                            <li class="card-balance">
+                                <button type="button"
+                                        class="btn btn-lg budget-btn btn-block"
+                                        data-toggle="modal"
+                                        data-target="#addModal">
+                                    Edit Report Options
+                                </button>
+                            </li>
+                            </li>
+
+
+
+                        </ul>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 add-new">
+                <div class="budget-card-view block-deactivated" id="button1b">
+                    <header class="card-header transparent">Budget 1</header>
+                    <div class="card-content budget-block">
+
+
+
+                        <div class="budget-left-text"><span >Budget Exceeded</span>
+                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" title="We are working on it" data-toggle="modal" data-target="#addModal">
+                                Generate Report
+                            </button>
+                        </div>
+                        <div class="budget-left-number"><span >$300.00</span>
+
+                        </div>
+
+
+                        <ul>
+
+                            <li class="card-balance">
+
+                                <ul class="bank-list">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Total Spending</span></div>
+                                            <div class="budget-left-second-number"><span >$600.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Budget Amount</span></div>
+                                            <div class="budget-left-second-number"><span >$600.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Days Left</span></div>
+                                            <div class="budget-left-second-number"><span >7</span></div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </ul>
+                            </li>
+                            <div class="card-content">
+                                        Budget by Categories
+                            </div>
+
+
+                        </ul>
+
+                        <ul>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                <span class="icon">
+                                    <i class="fas fa-utensils"></i>
+                                </span>
+                                            <div class="purchase-title">
+                                                <span>Food</span>
+                                                <span>$ 150</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                  <a href="#" class="btn" data-toggle="modal"
+                                     data-target="#editModal"><i class="far fa-edit"></i></a>
+                              </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-home"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Rent</span>
+                                                <span>$ 300</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Online Shopping</span>
+                                                <span>$ 50</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-glass-cheers"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Entertainment</span>
+                                                <span>$ 50</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-question-circle"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Others</span>
+                                                <span>$ 50</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+            </div>
+                <div class="budget-card-view block-activated" id="button2b">
+                    <header class="card-header transparent">Budget 2</header>
+                    <div class="card-content  budget-block">
+
+
+
+                        <div class="budget-left-text"><span >Budget Exceeded</span>
+                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" title="We are working on it" data-toggle="modal" data-target="#editModal">
+                                Generate Report
+                            </button>
+                        </div>
+                        <div class="budget-left-number"><span >$200.00</span>
+
+                        </div>
+
+
+                        <ul>
+
+                            <li class="card-balance">
+
+                                <ul class="bank-list">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Total Spending</span></div>
+                                            <div class="budget-left-second-number"><span >$1400.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Budget Amount</span></div>
+                                            <div class="budget-left-second-number"><span >$1200.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Days Left</span></div>
+                                            <div class="budget-left-second-number"><span >7</span></div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </ul>
+                            </li>
+                            <div class="card-content">
+                                Budget by Categories
+                            </div>
+
+
+                        </ul>
+
+                        <ul>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                <span class="icon">
+                                    <i class="fas fa-utensils"></i>
+                                </span>
+                                            <div class="purchase-title">
+                                                <span>Food</span>
+                                                <span>$ 300</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                  <a href="#" class="btn" data-toggle="modal"
+                                     data-target="#editModal"><i class="far fa-edit"></i></a>
+                              </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-home"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Rent</span>
+                                                <span>$ 600</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-shopping-cart"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Online Shopping</span>
+                                                <span>$ 100</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-glass-cheers"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Entertainment</span>
+                                                <span>$ 0</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li class="card-purchases">
+                                <div class="purchases-header">
+                                    <h3>
+                                        <div class="purchase-content">
+                                  <span class="icon">
+                                      <i class="fas fa-question-circle"></i>
+                                  </span>
+                                            <div class="purchase-title">
+                                                <span>Others</span>
+                                                <span>$ 200</span>
+                                            </div>
+                                        </div>
+                                        <span>
+                                    <a href="#" class="btn" data-toggle="modal"
+                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                </span>
+                                    </h3>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="budget-card-view block-deactivated" id="button3b">
+                    <header class="card-header transparent s3">Report</header>
+                    <div class="card-content budget-block">
+
+
+
+                        <div class="budget-left-text"><span >Budget Exceeded</span>
+                            <button type="button" id="generateReport">
+                                Generate Report
+                            </button>
+                        </div>
+                        <div class="budget-left-number"><span id="s3a">$0.00</span>
+
+                        </div>
+
+
+                        <ul>
+
+                            <li class="card-balance">
+
+                                <ul class="bank-list">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Total Spending</span></div>
+                                            <div class="budget-left-second-number"><span >$1400.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span > </span></div>
+                                            <div class="budget-left-second-number"><span id="s3b">$1600.00</span></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="budget-left-second-text"><span >Days Left</span></div>
+                                            <div class="budget-left-second-number"><span id="s3c">7</span></div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </ul>
+                            </li>
+                            <div class="card-content">
+                                Report Graph
+                            </div>
+
+
+                        </ul>
+
+
+                          <!--Div that will hold the pie chart-->
+                          <div id="chart_div"></div>
+
+                    </div>
+
+                </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+    </div>
+
+
+
+    <!--model-->
+    <div class="modal modal-wrap" tabindex="-1" role="dialog" id="addModal">
+        <div class="modal-dialog bugdet-modal border-0" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Select Report Options</h5>
+                    <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" height>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Categories</div>
+                        <div class="col-sm-9">
+                          <button id="foodButton">Food</button>
+                          <button id="entertainmentButton">Entertainment</button>
+                          <button id="rentButton">Rent</button>
+                          <button id="onlineShoppingButton">Online Shoppping</button>
+                          <button id="othersButton">Others</button>
+                          <!-- <label class="container" id="foodCheckBox" onclick="changeFood()">Food
+                            <input type="checkbox" ><span class="checkmark"></span>
+                          </label>
+
+                          <label class="container"id="entertainmentCheckBox">Entertainment
+                            <input type="checkbox" onchange="changeEntertainment()">
+                            <span class="checkmark"></span>
+                          </label>
+
+                          <label class="container"id="rentCheckBox">Rent
+                            <input type="checkbox" onclick="changeRent()">
+                            <span class="checkmark"></span>
+                          </label>
+
+                          <label class="container"id="onlineShoppingCheckBox">Online Shopping
+                            <input type="checkbox" onclick="changeOnlineShopping()">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="container"id="othersCheckbox">Others
+                            <input type="checkbox" onclick="changeOthers()">
+                            <span class="checkmark"></span>
+                          </label> -->
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-3">Period</div>
+                        <div class="col-sm-9">
+                            <select class="custom-select" id="period">
+                                <option selected>Choose...</option>
+                                <option value="1">7 Days</option>
+                                <option value="2">14 Days</option>
+                                <option value="3">30 Days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Email</div>
+                        <div class="col-sm-9">
+                            <input
+                                    type="text"
+                                    class="form-control buget-radius"
+                                    id="memo"
+                                    name="memo"
+
+                                    value=""
+                                    required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bugdet-modal-footer">
+                    <button
+                            type="button"
+                            class="btn btn-secondary budget-radius transparent"
+                            data-dismiss="modal"
+                    >
+                        Close
+                    </button>
+                    <button
+                            type="button"
+                            class="btn btn-primary budget-radius primary-color border-0"
+
+                            onclick="submit()"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end model-->
+
+
+
+
+</div>
+<script>
+  function changeFood(){
+    console.log('in change food');
+    foodCheckBox = !foodCheckBox;
+
+    // print("did this work")
+  }
+</script>
+
+<script src="js/report.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+></script>
+<script>
+    $(document).ready(function() {
+        $(function() {
+            $('[data-toggle="popover"]').popover();
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $(function() {
+            $('[data-toggle="popover"]').popover();
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            var mS = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "June",
+                "July",
+                "Aug",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dec"
+            ];
+            var d = today.getDay();
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = "0" + dd;
+            }
+
+            today = days[d] + ", " + mS[mm - 1] + " " + dd + " " + yyyy;
+
+            $("#now-date").text(today);
+            if (mm < 10) {
+                mm = "0" + mm;
+            }
+            var date_val = yyyy + "-" + mm + "-" + dd;
+            console.log(date_val);
+            $("#date").val(date_val);
+        });
+    });
+</script>
+
+<script>
+
+    cg = function (obj) {
+
+        var o = document.getElementById("it" + obj.id.toString().substr(1));
+        var i = document.getElementById("ta");
+
+        if (o.childNodes[0].value) {
+
+            o.innerHTML = o.childNodes[0].value;
+            var i1 = document.getElementById("it1").innerText
+            var i2 = document.getElementById("it2").innerText
+            var i3 = document.getElementById("it3").innerText
+            var i4 = document.getElementById("it4").innerText
+            var i5 = document.getElementById("it5").innerText
+
+            i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
+
+            if( i.innerHTML != '0' && !Number(i.innerHTML)){
+                alert("Budget amount should be number only, reenter your amount!");
+                return
+            }
+
+
+        } else {
+
+            o.innerHTML = "<input type='text' class='add-budget-input' value='" + document.getElementById("it" + obj.id.toString().substr(
+
+                1)).innerHTML + "' />";
+
+        }
+
+    }
+
+</script>
+
+<!--<script>-->
+
+    <!--cge = function (obj) {-->
+
+        <!--var eo = document.getElementById("eit" + obj.id.toString().substr(1));-->
+        <!--var ei = document.getElementById("eta");-->
+
+        <!--if (eo.childNodes[0].value) {-->
+
+            <!--eo.innerHTML = eo.childNodes[0].value;-->
+            <!--var i1 = document.getElementById("eit1").innerText-->
+            <!--var i2 = document.getElementById("eit2").innerText-->
+            <!--var i3 = document.getElementById("eit3").innerText-->
+            <!--var i4 = document.getElementById("eit4").innerText-->
+            <!--var i5 = document.getElementById("eit5").innerText-->
+
+            <!--ei.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);-->
+
+
+        <!--} else {-->
+
+            <!--eo.innerHTML = "<input type='text' class='add-budget-input' value='" + document.getElementById("eit" + obj.id.toString().substr(1)).innerHTML + "' />";-->
+
+        <!--}-->
+
+    <!--}-->
+
+<!--</script>-->
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+<script src="js/budget.js"></script>
+</body>
+</html>
