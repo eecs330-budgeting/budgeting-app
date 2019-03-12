@@ -26,10 +26,11 @@ function submit(){
     //     return this.value;
     // }).get();
     // let cate = list
-    let memo = $( '#memo' ).val()
-    let period = $( '#period' ).val()
+    let memo = $( '#memo' ).val();
+    let period = $( '#period' ).val();
     var per;
     var d;
+    var total = document.getElementById("ta").innerText;
     if (period == 1)
     {
         per = '7 Days';
@@ -55,6 +56,11 @@ function submit(){
         alert("Please enter nickname!");
         return;
     }
+    else if(total == "NaN"){
+        alert("Budget amount should be number only, reenter your amount!");
+        return;
+    }
+
 
     else {
         var it1 = document.getElementById("it1").innerText
@@ -63,10 +69,15 @@ function submit(){
         var it4 = document.getElementById("it4").innerText
         var it5 = document.getElementById("it5").innerText
 
+
         var i;
 
 
+
+
         i = Number(it1) + Number(it2) + Number(it3) + Number(it4) + Number(it5);
+
+
 
 
 

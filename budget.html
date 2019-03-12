@@ -632,11 +632,11 @@
                         <div class="col-sm-3">Type of Budget</div>
                         <div class="col-sm-9">
                             <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1" onclick="cg(this)">Food</button> $ <span id="it1">0</span>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1" onclick="cg(this)">Food</button> $ <span class="flag0" id="it1">0</span>
 
                             </p>
                             <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2" onclick="cg(this)">Rent</button> $ <span id="it2">0</span>
+                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2" onclick="cg(this)">Rent</button> $ <span class="flag0" id="it2">0</span>
 
                             </p>
                             <p>
@@ -888,18 +888,30 @@
             var i5 = document.getElementById("it5").innerText
 
             i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
+            o.classList.replace("flag1", "flag0");
+
 
             if( i.innerHTML != '0' && !Number(i.innerHTML)){
                 alert("Budget amount should be number only, reenter your amount!");
-                return
+                var j;
+                o.innerHTML = "0";
+                 i1 = document.getElementById("it1").innerText
+                 i2 = document.getElementById("it2").innerText
+                 i3 = document.getElementById("it3").innerText
+                 i4 = document.getElementById("it4").innerText
+                 i5 = document.getElementById("it5").innerText
+                i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
+                return;
             }
 
 
         } else {
 
-            o.innerHTML = "<input type='text' class='add-budget-input' value='" + document.getElementById("it" + obj.id.toString().substr(
+            o.innerHTML = "<input type='text'    class='add-budget-input' value='" + document.getElementById("it" + obj.id.toString().substr(
 
                 1)).innerHTML + "' />";
+
+            o.classList.replace("flag0", "flag1");
 
         }
 
