@@ -23,41 +23,6 @@
     <title>Report</title>
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- <script type="text/javascript">
-
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Food', 300],
-          ['Entertainment', 100],
-          ['Rent', 200],
-          ['Online Shopping', 150],
-          ['Others', 50]
-        ]);
-
-        // Set chart options
-        var options = {'title':'Money Spent on Different Categories',
-                       'width':400,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script> -->
 
 
 </head>
@@ -155,7 +120,7 @@
 
                                             </h4>
                                             <h6>
-                                                <span class="nickname left">Period: 30 days</span>
+                                                <!-- <span class="nickname left">Period: 30 days</span> -->
                                             </h6>
 
                                         </button>
@@ -337,157 +302,9 @@
                     </div>
 
             </div>
-                <!-- <div class="budget-card-view block-deactivated" id="button2b">
-                    <header class="card-header transparent">Budget 2</header>
-                    <div class="card-content  budget-block">
 
 
-
-                        <div class="budget-left-text"><span >Budget Exceeded</span>
-                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" title="We are working on it" data-toggle="modal" data-target="#editModal">
-                                Generate Report
-                            </button>
-                        </div>
-                        <div class="budget-left-number"><span >$200.00</span>
-
-                        </div>
-
-
-                        <ul>
-
-                            <li class="card-balance">
-
-                                <ul class="bank-list">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="budget-left-second-text"><span >Total Spending</span></div>
-                                            <div class="budget-left-second-number"><span >$1400.00</span></div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="budget-left-second-text"><span >Budget Amount</span></div>
-                                            <div class="budget-left-second-number"><span >$1200.00</span></div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="budget-left-second-text"><span >Days Left</span></div>
-                                            <div class="budget-left-second-number"><span >7</span></div>
-
-                                        </div>
-
-                                    </div>
-
-
-
-
-                                </ul>
-                            </li>
-                            <div class="card-content">
-                                Budget by Categories
-                            </div>
-
-
-                        </ul>
-
-                        <ul>
-                            <li class="card-purchases">
-                                <div class="purchases-header">
-                                    <h3>
-                                        <div class="purchase-content">
-                                <span class="icon">
-                                    <i class="fas fa-utensils"></i>
-                                </span>
-                                            <div class="purchase-title">
-                                                <span>Food</span>
-                                                <span>$ 300</span>
-                                            </div>
-                                        </div>
-                                        <span>
-                                  <a href="#" class="btn" data-toggle="modal"
-                                     data-target="#editModal"><i class="far fa-edit"></i></a>
-                              </span>
-                                    </h3>
-                                </div>
-                            </li>
-                            <li class="card-purchases">
-                                <div class="purchases-header">
-                                    <h3>
-                                        <div class="purchase-content">
-                                  <span class="icon">
-                                      <i class="fas fa-home"></i>
-                                  </span>
-                                            <div class="purchase-title">
-                                                <span>Rent</span>
-                                                <span>$ 600</span>
-                                            </div>
-                                        </div>
-                                        <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
-                                </span>
-                                    </h3>
-                                </div>
-                            </li>
-                            <li class="card-purchases">
-                                <div class="purchases-header">
-                                    <h3>
-                                        <div class="purchase-content">
-                                  <span class="icon">
-                                      <i class="fas fa-shopping-cart"></i>
-                                  </span>
-                                            <div class="purchase-title">
-                                                <span>Online Shopping</span>
-                                                <span>$ 100</span>
-                                            </div>
-                                        </div>
-                                        <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
-                                </span>
-                                    </h3>
-                                </div>
-                            </li>
-                            <li class="card-purchases">
-                                <div class="purchases-header">
-                                    <h3>
-                                        <div class="purchase-content">
-                                  <span class="icon">
-                                      <i class="fas fa-glass-cheers"></i>
-                                  </span>
-                                            <div class="purchase-title">
-                                                <span>Entertainment</span>
-                                                <span>$ 0</span>
-                                            </div>
-                                        </div>
-                                        <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
-                                </span>
-                                    </h3>
-                                </div>
-                            </li>
-                            <li class="card-purchases">
-                                <div class="purchases-header">
-                                    <h3>
-                                        <div class="purchase-content">
-                                  <span class="icon">
-                                      <i class="fas fa-question-circle"></i>
-                                  </span>
-                                            <div class="purchase-title">
-                                                <span>Others</span>
-                                                <span>$ 200</span>
-                                            </div>
-                                        </div>
-                                        <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
-                                </span>
-                                    </h3>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                </div> -->
+                </div> 
                 <div class="budget-card-view block-activated" id="button3b">
                     <header class="card-header transparent s3">Report</header>
                     <div class="card-content budget-block">
@@ -495,48 +312,7 @@
 
 
                         <div class="budget-left-text"><span >Report Graph</span>
-                            <button type="button" id="generateReport"class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" data-toggle="modal" data-target="#addModal">
-                                Generate Report
-                            </button>
                         </div>
-                        <!-- <div class="budget-left-number"><span id="s3a">$0.00</span>
-
-                        </div> -->
-
-
-                        <!-- <ul>
-
-                            <li class="card-balance">
-
-                                <ul class="bank-list">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="budget-left-second-text"><span >Total Spending</span></div>
-                                            <div class="budget-left-second-number"><span >$1400.00</span></div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="budget-left-second-text"><span > </span></div>
-                                            <div class="budget-left-second-number"><span id="s3b">$1600.00</span></div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="budget-left-second-text"><span >Days Left</span></div>
-                                            <div class="budget-left-second-number"><span id="s3c">7</span></div>
-
-                                        </div>
-
-                                    </div>
-
-
-
-
-                                </ul>
-                            </li> -->
-                            <!-- <div class="card-content">
-                                Report Graph
-                            </div> -->
-
-
-                        <!-- </ul> -->
 
 
                           <!--Div that will hold the pie chart-->
@@ -576,12 +352,22 @@
                 <div class="modal-body" height>
                     <div class="form-group row">
                         <div class="col-sm-3">Categories</div>
-                        <div class="reportButtonsList">
-                          <button id="foodButton"class="reportCategoriesButtons">Food</button>
-                          <button id="entertainmentButton"class="reportCategoriesButtons">Entertainment</button>
-                          <button id="rentButton"class="reportCategoriesButtons">Rent</button>
-                          <button id="onlineShoppingButton"class="reportCategoriesButtons">Online Shoppping</button>
-                          <button id="othersButton"class="reportCategoriesButtons">Others</button>
+                        <div class="col-sm-9">
+                          <p>
+                            <button id="foodButton"class="reportCategoriesButtons">Food</button>
+                          </p>
+                          <p>
+                            <button id="entertainmentButton"class="reportCategoriesButtons">Entertainment</button>
+                          </p>
+                          <p>
+                            <button id="rentButton"class="reportCategoriesButtons">Rent</button>
+                          </p>
+                          <p>
+                            <button id="onlineShoppingButton"class="reportCategoriesButtons">Online Shoppping</button>
+                          </p>
+                          <p>
+                            <button id="othersButton"class="reportCategoriesButtons">Others</button>
+                          </p>
                         </div>
                     </div>
 
@@ -627,7 +413,7 @@
 
 
                     >
-                        GenerateReport
+                        Generate Report
                     </button>
                 </div>
             </div>
@@ -749,34 +535,7 @@
 
 </script>
 
-<!--<script>-->
 
-    <!--cge = function (obj) {-->
-
-        <!--var eo = document.getElementById("eit" + obj.id.toString().substr(1));-->
-        <!--var ei = document.getElementById("eta");-->
-
-        <!--if (eo.childNodes[0].value) {-->
-
-            <!--eo.innerHTML = eo.childNodes[0].value;-->
-            <!--var i1 = document.getElementById("eit1").innerText-->
-            <!--var i2 = document.getElementById("eit2").innerText-->
-            <!--var i3 = document.getElementById("eit3").innerText-->
-            <!--var i4 = document.getElementById("eit4").innerText-->
-            <!--var i5 = document.getElementById("eit5").innerText-->
-
-            <!--ei.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);-->
-
-
-        <!--} else {-->
-
-            <!--eo.innerHTML = "<input type='text' class='add-budget-input' value='" + document.getElementById("eit" + obj.id.toString().substr(1)).innerHTML + "' />";-->
-
-        <!--}-->
-
-    <!--}-->
-
-<!--</script>-->
 
 <script>
     $(function () {

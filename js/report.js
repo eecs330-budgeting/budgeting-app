@@ -84,7 +84,51 @@ console.log("got into report.js");
      colorChanger(element, reportCategoriesArray[4]);
      console.log('in change onlineShopping');
    }
+   function ValidateEmail(mail) {
+
+     if (mail.indexOf('@') > -1){
+       return true;
+     }else{
+       return false;
+     }
+}
+   function genReportHelper(){
+     let memo = $( '#memo' ).val()
+     let period = $( '#period' ).val()
+     var per;
+     var d;
+     if (period == 1)
+     {
+         per = '7 Days';
+         d = "7";
+     }
+     if (period == 2)
+     {
+         per = '14 Days';
+         d = "14";
+
+     }
+     if (period == 3)
+     {
+         per = '30 Days';
+         d = "30";
+     }
+
+     if( typeof per == 'undefined' ) {
+         alert("Please select period!");
+         return;
+     }
+     else if (!ValidateEmail(memo)){
+         console.log("inside else if genreporthelper");
+         alert("Please enter email!");
+
+         return;
+     }
+     $('#addModal').modal('hide');
+   }
    document.getElementById('generateReport').onclick = function generateReport(){
+     console.log("in generateReport");
+     genReportHelper();
      var dataNew = new google.visualization.DataTable();
      dataNew.addColumn('string', 'Category');
      dataNew.addColumn('number', 'Amount');
@@ -122,6 +166,7 @@ console.log("got into report.js");
       // Instantiate and draw our chart, passing in some options.
       var chartNew = new google.visualization.PieChart(document.getElementById('chart_div'));
       chartNew.draw(dataNew, optionsNew);
+
       }
 
    // function changeFood(){
@@ -130,8 +175,3 @@ console.log("got into report.js");
    //
    //   // print("did this work")
    // }
-
-
-
-
-  console.log("finished report.js")
