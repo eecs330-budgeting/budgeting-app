@@ -63,11 +63,11 @@ function submit(){
 
 
     else {
-        var it1 = document.getElementById("it1").innerText
-        var it2 = document.getElementById("it2").innerText
-        var it3 = document.getElementById("it3").innerText
-        var it4 = document.getElementById("it4").innerText
-        var it5 = document.getElementById("it5").innerText
+        var it1 = $( '#it1' ).val();
+        var it2 = $( '#it2' ).val();
+        var it3 = $( '#it3' ).val();
+        var it4 = $( '#it4' ).val();
+        var it5 = $( '#it5' ).val();
 
 
         var i;

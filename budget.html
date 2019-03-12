@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/budget.css" />
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
     <title>Budget</title>
@@ -631,26 +632,66 @@
                     <div class="form-group row">
                         <div class="col-sm-3">Type of Budget</div>
                         <div class="col-sm-9">
-                            <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1" onclick="cg(this)">Food</button> $ <span class="flag0" id="it1">0</span>
-
-                            </p>
-                            <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2" onclick="cg(this)">Rent</button> $ <span class="flag0" id="it2">0</span>
-
-                            </p>
-                            <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a3" onclick="cg(this)">Online Shopping</button> $ <span id="it3">0</span>
-
-                            </p>
-                            <p>
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a4" onclick="cg(this)">Entertainment</button> $ <span id="it4">0</span>
-
-                            </p>
-                            <p>
-
-                                <button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a5" onclick="cg(this)">Others</button> $ <span id="it5">0</span>
-                            </p>
+                            <div class="budget-info">
+                                <div class="balance-header budget-header">
+                                        <h3>
+                                            <div>
+                                                <span>Food</span>
+                                            </div>
+                                        </h3>
+                                </div>
+                                <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                <span class="dollar"> $</span> 
+                                <input type="text"  id="it1"  class="add-budget-input" value="0" />
+                            </div>
+                            <div class="budget-info">
+                                    <div class="balance-header budget-header">
+                                            <h3>
+                                                <div>
+                                                    <span>Rent</span>
+                                                </div>
+                                            </h3>
+                                    </div>
+                                    <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                    <span class="dollar"> $</span> 
+                                    <input type="text"  id="it2"  class="add-budget-input" value="0" />
+                            </div>
+                            <div class="budget-info">
+                                    <div class="balance-header budget-header">
+                                            <h3>
+                                                <div>
+                                                    <span>Online Shopping</span>
+                                                </div>
+                                            </h3>
+                                    </div>
+                                    <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                    <span class="dollar"> $</span> 
+                                    <input type="text"  id="it3"  class="add-budget-input" value="0" />
+                            </div>
+                            <div class="budget-info">
+                                    <div class="balance-header budget-header">
+                                            <h3>
+                                                <div>
+                                                    <span>Entertainment</span>
+                                                </div>
+                                            </h3>
+                                    </div>
+                                    <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                    <span class="dollar"> $</span> 
+                                    <input type="text"  id="it4"  class="add-budget-input" value="0" />
+                            </div>
+                            <div class="budget-info">
+                                    <div class="balance-header budget-header">
+                                            <h3>
+                                                <div>
+                                                    <span>Others</span>
+                                                </div>
+                                            </h3>
+                                    </div>
+                                    <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                    <span class="dollar"> $</span> 
+                                    <input type="text"  id="it5"  class="add-budget-input" value="0" />
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -665,12 +706,6 @@
                                     value=""
                                     required
                             />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-3">Total</div>
-                        <div class="col-sm-9">
-                            $ <span id="ta"> 0</span>
                         </div>
                     </div>
                     <div class="form-group row">
