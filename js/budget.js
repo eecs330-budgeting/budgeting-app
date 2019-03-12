@@ -30,7 +30,7 @@ function submit(){
     let period = $( '#period' ).val();
     var per;
     var d;
-    var total = document.getElementById("ta").innerText;
+    // var total = document.getElementById("ta").innerText;
     if (period == 1)
     {
         per = '7 Days';
@@ -54,10 +54,6 @@ function submit(){
     }
     else if (memo == '' ){
         alert("Please enter nickname!");
-        return;
-    }
-    else if(total == "NaN"){
-        alert("Budget amount should be number only, reenter your amount!");
         return;
     }
 
