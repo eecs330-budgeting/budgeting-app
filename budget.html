@@ -83,12 +83,12 @@
                                     <li>
                                         <button type="button" id = "button1" class=" btn btn-block budget-list-btn"  onclick="activate(this.id)">
                                             <h4>
-                                                <span>Budget 1</span>
+                                                <span class="title" >Budget 1</span>
                                                 <span id = "button1a" class="active deactivated"><span><i class="fa fa-check-square " aria-hidden="true"></i></span> Activated</span>
 
                                             </h4>
                                             <h6>
-                                                <span class="nickname left">Period: 14 days</span>
+                                                <span class="nickname left days">Period: 14 days</span>
                                             </h6>
 
                                         </button>
@@ -148,17 +148,17 @@
             </div>
             <div class="col-md-8 add-new">
                 <div class="budget-card-view block-deactivated" id="button1b">
-                    <header class="card-header transparent">Budget 1</header>
+                    <header class="card-header transparent title" >Budget 1</header>
                     <div class="card-content budget-block">
 
 
 
                         <div class="budget-left-text"><span >Budget Exceeded</span>
-                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="tooltip" data-placement="top" title="We are working on it" data-toggle="modal" data-target="#addModal">
+                            <button type="button" class="btn btn-lg budget-btn right" data-toggle="modal" data-target="#editModal">
                                 Edit Budget
                             </button>
                         </div>
-                        <div class="budget-left-number"><span >$300.00</span>
+                        <div class="budget-left-number"><span id="ta1">$300.00</span>
 
                         </div>
 
@@ -171,15 +171,15 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="budget-left-second-text"><span >Total Spending</span></div>
-                                            <div class="budget-left-second-number"><span >$600.00</span></div>
+                                            <div class="budget-left-second-number"><span >$900.00</span></div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="budget-left-second-text"><span >Budget Amount</span></div>
-                                            <div class="budget-left-second-number"><span >$600.00</span></div>
+                                            <div class="budget-left-second-number"><span id="ta">$600.00</span></div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="budget-left-second-text"><span >Days Left</span></div>
-                                            <div class="budget-left-second-number"><span >7</span></div>
+                                            <div class="budget-left-second-number"><span class="days_left">7</span></div>
 
                                         </div>
 
@@ -207,12 +207,13 @@
                                 </span>
                                             <div class="purchase-title">
                                                 <span>Food</span>
-                                                <span>$ 150</span>
+                                                <div>
+                                                    $ <span id="pt1">150</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <span>
-                                  <a href="#" class="btn" data-toggle="modal"
-                                     data-target="#editModal"><i class="far fa-edit"></i></a>
+                                   <a href="javascript:;" id="a1" onclick="cg(this)" ><i class="far fa-edit"></i></a>
                               </span>
                                     </h3>
                                 </div>
@@ -226,12 +227,13 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Rent</span>
-                                                <span>$ 300</span>
+                                                <div>
+                                                    $ <span id="pt2">300</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                    <a href="javascript:;" id="a2" onclick="cg(this)" ><i class="far fa-edit"></i></a>
                                 </span>
                                     </h3>
                                 </div>
@@ -245,12 +247,13 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Online Shopping</span>
-                                                <span>$ 50</span>
+                                                <div>
+                                                    $ <span id="pt3">50</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                    <a href="javascript:;" id="a3" onclick="cg(this)" ><i class="far fa-edit"></i></a>
                                 </span>
                                     </h3>
                                 </div>
@@ -264,12 +267,14 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Entertainment</span>
-                                                <span>$ 50</span>
+                                                <div>
+                                                    $ <span id="pt4">50</span>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                     <a href="javascript:;" id="a4" onclick="cg(this)" ><i class="far fa-edit"></i></a>
                                 </span>
                                     </h3>
                                 </div>
@@ -283,12 +288,14 @@
                                   </span>
                                             <div class="purchase-title">
                                                 <span>Others</span>
-                                                <span>$ 50</span>
+                                                <div>
+                                                    $ <span id="pt5">50</span>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <span>
-                                    <a href="#" class="btn" data-toggle="modal"
-                                       data-target="#editModal"><i class="far fa-edit"></i></a>
+                                    <a href="javascript:;" id="a5" onclick="cg(this)" ><i class="far fa-edit"></i></a>
                                 </span>
                                     </h3>
                                 </div>
@@ -745,97 +752,131 @@
 
     <!--edit model-->
 
-    <!--<div class="modal modal-wrap" tabindex="-1" role="dialog" id="editModal">-->
-        <!--<div class="modal-dialog bugdet-modal border-0" role="document">-->
-            <!--<div class="modal-content">-->
-                <!--<div class="modal-header">-->
-                    <!--<h5 class="modal-title">Edit Budget</h5>-->
-                    <!--<button-->
-                            <!--type="button"-->
-                            <!--class="close"-->
-                            <!--data-dismiss="modal"-->
-                            <!--aria-label="Close"-->
-                    <!--&gt;-->
-                        <!--<span aria-hidden="true">&times;</span>-->
-                    <!--</button>-->
-                <!--</div>-->
-                <!--<div class="modal-body" height>-->
-                    <!--<div class="form-group row">-->
-                        <!--<div class="col-sm-3">Type of Budget</div>-->
-                        <!--<div class="col-sm-9">-->
-                            <!--<p>-->
-                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a1e" onclick="cge(this)">Food</button> $ <span id="eit1"> 0</span>-->
+    <div class="modal modal-wrap" tabindex="-1" role="dialog" id="editModal">
+        <div class="modal-dialog bugdet-modal border-0" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Budget</h5>
+                    <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" height>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Type of Budget</div>
+                        <div class="col-sm-9">
+                            <div class="budget-info">
+                                <div class="balance-header budget-header">
+                                    <h3>
+                                        <div>
+                                            <span>Food</span>
+                                        </div>
+                                    </h3>
+                                </div>
+                                <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                <span class="dollar"> $</span>
+                                <input type="text"  id="eit1"  class="add-budget-input" value="0" />
+                            </div>
+                            <div class="budget-info">
+                                <div class="balance-header budget-header">
+                                    <h3>
+                                        <div>
+                                            <span>Rent</span>
+                                        </div>
+                                    </h3>
+                                </div>
+                                <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                <span class="dollar"> $</span>
+                                <input type="text"  id="eit2"  class="add-budget-input" value="0" />
+                            </div>
+                            <div class="budget-info">
+                                <div class="balance-header budget-header">
+                                    <h3>
+                                        <div>
+                                            <span>Online Shopping</span>
+                                        </div>
+                                    </h3>
+                                </div>
+                                <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                <span class="dollar"> $</span>
+                                <input type="text"  id="eit3"  class="add-budget-input" value="0" />
+                            </div>
+                            <div class="budget-info">
+                                <div class="balance-header budget-header">
+                                    <h3>
+                                        <div>
+                                            <span>Entertainment</span>
+                                        </div>
+                                    </h3>
+                                </div>
+                                <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                <span class="dollar"> $</span>
+                                <input type="text"  id="eit4"  class="add-budget-input" value= '0' />
+                            </div>
+                            <div class="budget-info">
+                                <div class="balance-header budget-header">
+                                    <h3>
+                                        <div>
+                                            <span>Others</span>
+                                        </div>
+                                    </h3>
+                                </div>
+                                <!-- <button class="btn btn-lg budget-btn add-budget-button"  id="a1">Food</button>  -->
+                                <span class="dollar"> $</span>
+                                <input type="text"  id="eit5"  class="add-budget-input" value="0"  />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Nickname</div>
+                        <div class="col-sm-9">
+                            <input
+                                    type="text"
+                                    class="form-control buget-radius"
+                                    id="ememo"
+                                    name="ememo"
 
-                            <!--</p>-->
-                            <!--<p>-->
-                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a2e" onclick="cge(this)">Rent</button> $ <span id="eit2"> 0</span>-->
-
-                            <!--</p>-->
-                            <!--<p>-->
-                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a3e" onclick="cge(this)">Online Shopping</button> $ <span id="eit3"> 0</span>-->
-
-                            <!--</p>-->
-                            <!--<p>-->
-                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a4e" onclick="cge(this)">Entertainment</button> $ <span id="eit4"> 0</span>-->
-
-                            <!--</p>-->
-                            <!--<p>-->
-
-                                <!--<button class="btn btn-lg budget-btn add-budget-button" href="javascript:;" id="a5e" onclick="cge(this)">Others</button> $ <span id="eit5"> 0</span>-->
-                            <!--</p>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="form-group row">-->
-                        <!--<div class="col-sm-3">Nickname</div>-->
-                        <!--<div class="col-sm-9">-->
-                            <!--<input-->
-                                    <!--type="text"-->
-                                    <!--class="form-control buget-radius"-->
-                                    <!--id="ememo"-->
-                                    <!--name="memo"-->
-
-                                    <!--value=""-->
-                                    <!--required-->
-                            <!--/>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="form-group row">-->
-                        <!--<div class="col-sm-3">Total</div>-->
-                        <!--<div class="col-sm-9">-->
-                            <!--$ <span id="eta"> 0</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="form-group row">-->
-                        <!--<div class="col-sm-3">Period</div>-->
-                        <!--<div class="col-sm-9">-->
-                            <!--<select class="custom-select" id="eperiod">-->
-                                <!--<option selected>Choose...</option>-->
-                                <!--<option value="1">7 Days</option>-->
-                                <!--<option value="2">14 Days</option>-->
-                                <!--<option value="3">30 Days</option>-->
-                            <!--</select>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="modal-footer bugdet-modal-footer">-->
-                    <!--<button-->
-                            <!--type="button"-->
-                            <!--class="btn btn-secondary budget-radius transparent"-->
-                            <!--data-dismiss="modal"-->
-                    <!--&gt;-->
-                        <!--Close-->
-                    <!--</button>-->
-                    <!--<button-->
-                            <!--type="button"-->
-                            <!--class="btn btn-primary budget-radius primary-color border-0"-->
-                            <!--onclick="edit()"-->
-                    <!--&gt;-->
-                        <!--Submit-->
-                    <!--</button>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+                                    value=""
+                                    required
+                            />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Period</div>
+                        <div class="col-sm-9">
+                            <select class="custom-select" id="eperiod">
+                                <option selected>Choose...</option>
+                                <option value="1">7 Days</option>
+                                <option value="2">14 Days</option>
+                                <option value="3">30 Days</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bugdet-modal-footer">
+                    <button
+                            type="button"
+                            class="btn btn-secondary budget-radius transparent"
+                            data-dismiss="modal"
+                    >
+                        Close
+                    </button>
+                    <button
+                            type="button"
+                            class="btn btn-primary budget-radius primary-color border-0"
+                            onclick="edit()"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--end edit-->
 
 </div>
@@ -910,43 +951,63 @@
 
     cg = function (obj) {
 
-        var o = document.getElementById("it" + obj.id.toString().substr(1));
+        var o = document.getElementById("pt" + obj.id.toString().substr(1));
         var i = document.getElementById("ta");
+      
 
         if (o.childNodes[0].value) {
 
             o.innerHTML = o.childNodes[0].value;
-            var i1 = document.getElementById("it1").innerText
-            var i2 = document.getElementById("it2").innerText
-            var i3 = document.getElementById("it3").innerText
-            var i4 = document.getElementById("it4").innerText
-            var i5 = document.getElementById("it5").innerText
+            var i1 = document.getElementById("pt1").innerText
+            var i2 = document.getElementById("pt2").innerText
+            var i3 = document.getElementById("pt3").innerText
+            var i4 = document.getElementById("pt4").innerText
+            var i5 = document.getElementById("pt5").innerText
+            var j;
+            var k;
+            j = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
+            k = 900 - j;
+            if ( k < 0) k = 0;
 
             i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
-            o.classList.replace("flag1", "flag0");
+            var temp  = o.innerHTML
+            i.innerHTML = '$' + i.innerHTML;
+
+            $( '#ta1').text('$' + Number(k));
 
 
-            if( i.innerHTML != '0' && !Number(i.innerHTML)){
+
+            if( (temp != '0' && !Number(temp))){
                 alert("Budget amount should be number only, reenter your amount!");
-                var j;
+
                 o.innerHTML = "0";
-                 i1 = document.getElementById("it1").innerText
-                 i2 = document.getElementById("it2").innerText
-                 i3 = document.getElementById("it3").innerText
-                 i4 = document.getElementById("it4").innerText
-                 i5 = document.getElementById("it5").innerText
+                 i1 = document.getElementById("pt1").innerText
+                 i2 = document.getElementById("pt2").innerText
+                 i3 = document.getElementById("pt3").innerText
+                 i4 = document.getElementById("pt4").innerText
+                 i5 = document.getElementById("pt5").innerText
+
+                j = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
+                k = 900 - j;
+                if ( k < 0) k = 0;
+
                 i.innerHTML = Number(i1) + Number(i2) + Number(i3) + Number(i4) + Number(i5);
+
+                i.innerHTML = '$' + i.innerHTML;
+
+                $( '#ta1').text('$' + Number(k));
+
                 return;
             }
 
 
         } else {
 
-            o.innerHTML = "<input type='text'    class='add-budget-input' value='" + document.getElementById("it" + obj.id.toString().substr(
+            o.innerHTML = "<input type='text'    class='add-budget-input' value='" + document.getElementById("pt" + obj.id.toString().substr(
 
                 1)).innerHTML + "' />";
 
-            o.classList.replace("flag0", "flag1");
+
 
         }
 

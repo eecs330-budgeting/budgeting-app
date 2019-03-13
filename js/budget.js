@@ -64,12 +64,13 @@ function submit(){
         var it3 = $( '#it3' ).val();
         var it4 = $( '#it4' ).val();
         var it5 = $( '#it5' ).val();
+        if ((!Number(it1) && it1 != '0') || (!Number(it2) && it2 != '0') || (!Number(it3) && it3 != '0') || (!Number(it4) && it4 != '0') || (!Number(it5) && it5 != '0')) {
+            alert("Please enter valid budget amount!");
+            return;
+        }
 
 
         var i;
-
-
-
 
         i = Number(it1) + Number(it2) + Number(it3) + Number(it4) + Number(it5);
 
@@ -89,23 +90,27 @@ function submit(){
 
 function edit(){
 
-    let memoe = $( '#memoe' ).val()
-    let periode = $( '#periode' ).val()
+    let ememo = $( '#ememo' ).val()
+    let eperiod = $( '#eperiod' ).val()
     var per;
     var d;
-    if (periode == 1)
+    var pp;
+    if (eperiod == 1)
     {
+        pp = 'Period: 7 days';
         per = '7 Days';
         d = "7";
     }
-    if (periode == 2)
+    if (eperiod == 2)
     {
+        pp = 'Period: 14 days';
         per = '14 Days';
         d = "14";
 
     }
-    if (periode == 3)
+    if (eperiod == 3)
     {
+        pp = 'Period: 30 days';
         per = '30 Days';
         d = "30";
     }
@@ -114,15 +119,65 @@ function edit(){
         alert("Please select period!");
         return;
     }
-    else if (memoe == '' ){
+    else if (ememo == '' ){
         alert("Please enter nickname!");
         return;
     }
-    $( '#s3' ).text(memoe.toString());
-    $( '#s3c' ).text(per);
+
+    else {
+        var eit1 = $('#eit1').val();
+        var eit2 = $('#eit2').val();
+        var eit3 = $('#eit3').val();
+        var eit4 = $('#eit4').val();
+        var eit5 = $('#eit5').val();
+        if ((!Number(eit1) && eit1 != '0') || (!Number(eit2) && eit2 != '0') || (!Number(eit3) && eit3 != '0') || (!Number(eit5) && eit5 != '0') || (!Number(eit5) && eit5 != '0')) {
+            alert("Please enter valid budget amount!");
+            return;
+        }
+
+
+        var i;
+
+        i = Number(eit1) + Number(eit2) + Number(eit3) + Number(eit4) + Number(eit5);
+        var j = 900 - i;
+        if (j < 0)
+        {
+            j = 0;
+        }
+        i.innerHTML = '$' + i.innerHTML;
+
+
+
+        $( '.title' ).text(ememo.toString());
+        $( '.days' ).text(pp);
+        $( '.days_left' ).text(Number(d) - 7);
+        $( '#pt1').text(Number(eit1));
+        $( '#pt2').text(Number(eit2));
+        $( '#pt3').text(Number(eit3));
+        $( '#pt4').text(Number(eit4));
+        $( '#pt5').text(Number(eit5));
+        $( '#ta1').text('$' + Number(j));
+        $( '#ta').text('$' + Number(i));
+
+
+
+    }
+
+
+
+
+
+
+
+
     $('#editModal').modal('hide');
 }
 
+// function get_value(x) {
+//     var res = document.getElementById(x).innerHTML;
+//     return res;
+//
+// }
 
 
 
