@@ -41,11 +41,15 @@ console.log("got into report.js");
   }
   function colorChanger(element, bool){
     if (bool){
-      element.style.backgroundColor = "lightblue";
+      element.style.backgroundColor = "black";
+        element.style.color = 'white';
+        element.style.outline = '0';
+
       console.log(element);
 
     }else{
       element.style.backgroundColor = "#f7f7f7";
+        element.style.color = 'black';
       console.log("in colorchanger else");
     }
 
