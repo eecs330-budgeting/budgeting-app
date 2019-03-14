@@ -48,3 +48,11 @@ window.remove = function(id){
     if (typeof id ==  "object" ) id = id.id
     document.getElementById(id).style.display = 'none';
 }
+
+function save(){
+    name = $( '#CardName' ).val();
+    status = $('#CardStatus').val();
+    $( '#CardName' ).val(name);
+    $('#CardStatus').val(status);
+    $('#viewCardModal').modal('hide');
+}
