@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script>
+        function doClick() {
+            if(!empty($_POST)){
+                "";
+            }
+            else
+            {
+                header("Location: /index.html")
+            }
+        }
+    </script>
 
     <!-- Bootstrap CSS -->
     <link
@@ -23,12 +34,12 @@
         <div class="b-box">
 
             <h1 class="signin"> Sign in</h1>
-
+            <form action="index.html" method="post">
             <label class="email">
                 Email
             </label>
             <div class="input-group">
-                <input type="email" name="email" tabindex="1" placeholder="E-mail" required class="form-control">
+                <input type="email" name="email" tabindex="1" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"required class="form-control">
 
             </div>
             <label class="email">
@@ -46,9 +57,8 @@
             <button type="button" class="btn btn-link term link-color" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="Details" data-content="Don't check this on a public computer">Details</button>
           </span>
         </span></label>
-
-            <hr class="my-4">
-            <a class="btn login-btn btn-lg btn-block" href="index.html" role="button">Log In</a>
+            <hr class="my-4"><input input type="submit" value="Login" class="btn login-btn btn-lg btn-block" onclick="doClick()"; role="button">
+        </form>
             <span>Don't have account?</span><a href="createAccount.html" id="create_account_button"  class="link-color link-margin" data-container="body">Create Account
             </a>
         </div>
