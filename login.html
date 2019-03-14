@@ -14,6 +14,16 @@
             }
         }
     </script>
+        <script language='javascript' type='text/javascript'>
+    function check(input) {
+        if (input.value != document.getElementById('password').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+</script>
 
     <!-- Bootstrap CSS -->
     <link
@@ -57,7 +67,7 @@
             <button type="button" class="btn btn-link term link-color" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="Details" data-content="Don't check this on a public computer">Details</button>
           </span>
         </span></label>
-            <hr class="my-4"><input input type="submit" value="Login" class="btn login-btn btn-lg btn-block" onclick="doClick()"; role="button">
+            <hr class="my-4"><input type="submit" value="Login" class="btn login-btn btn-lg btn-block" onclick="doClick()"; role="button">
         </form>
             <span>Don't have account?</span><a href="createAccount.html" id="create_account_button"  class="link-color link-margin" data-container="body">Create Account
             </a>
