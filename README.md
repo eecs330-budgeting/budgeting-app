@@ -1,4 +1,2 @@
-# Budgeting app
-Basic instructions go here.
-# chenbo
+# EECS330 HCI - Budgeting app
 
