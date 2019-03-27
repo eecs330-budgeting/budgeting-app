@@ -1,0 +1,19 @@
+.sign{
+    color: red;
+    font-size: 40px;
+    display: inline-block;
+
+}
+
+.background{
+    background-color: white;
+}
+.balance{
+    height: 8em;
+}
+
+.balance_budget{
+    display: inline-block;
+    float: right;
+    outline: none;
+}

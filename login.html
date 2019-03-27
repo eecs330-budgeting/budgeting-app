@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script>
+        function doClick() {
+            if(!empty($_POST)){
+                "";
+            }
+            else
+            {
+                header("Location: /index.html")
+            }
+        }
+    </script>
+        <script language='javascript' type='text/javascript'>
+    function check(input) {
+        if (input.value != document.getElementById('password').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+</script>
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/login.css"/>
+    <title>Login</title>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="a-box">
+
+        <div class="b-box">
+
+            <h1 class="signin"> Sign in</h1>
+            <form action="index.html" method="post">
+            <label class="email">
+                Email
+            </label>
+            <div class="input-group">
+                <input type="email" name="email" tabindex="1" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"required class="form-control">
+
+            </div>
+            <label class="email">
+                Password
+            </label>
+            <div class="input-group">
+                <input type="Password" pattern=".{8,16}" tabindex="2" required title="8-16" class="form-control" placeholder="Password">
+
+            </div>
+
+            <label><input type="checkbox" value="true" tabindex="3"><i class="a-icon a-icon-checkbox"></i>
+                <span class="term">
+                    Keep me signed in.
+                <span>
+            <button type="button" class="btn btn-link term link-color" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" title="Details" data-content="Don't check this on a public computer">Details</button>
+          </span>
+        </span></label>
+            <hr class="my-4"><input type="submit" value="Login" class="btn login-btn btn-lg btn-block" onclick="doClick()"; role="button">
+        </form>
+            <span>Don't have account?</span><a href="createAccount.html" id="create_account_button"  class="link-color link-margin" data-container="body">Create Account
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+></script>
+<script>
+    $(document).ready(function() {
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+    });
+</script>
+
+
+
+
+</body>
+</html>

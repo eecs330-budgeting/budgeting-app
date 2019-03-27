@@ -1,0 +1,81 @@
+.a-box {
+    display: block;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    background-color: #fff;
+    width: 375px;
+    height: 812px;
+    position: absolute;
+
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.b-box {
+    display: block;
+    border-radius: 4px;
+
+    background-color: #fff;
+    width: 300px;
+    height: 700px;
+    position: absolute;
+
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.signin{
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.email{
+    display: block;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-left: 1px;
+}
+
+.term{
+    font-size: 12px;
+}
+
+.login-btn{
+
+    background-color: #f7f7f7;
+    border-radius: 0;
+    color:black;
+    font-size:15px;
+    border:0;
+}
+
+.login-btn:hover{
+    background-color: black;
+    color: white;
+}
+.login-btn:active{
+    background-color: rgba(40,40,40,1);
+    color: white;
+    outline: none;
+}
+
+.white{
+    background-color: white;
+}
+
+.link-color{
+	color:#6f72dc !important;
+}
+
+.link-margin{
+    margin-left:10px;
+}

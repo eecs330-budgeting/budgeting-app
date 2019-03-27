@@ -1,0 +1,22 @@
+.budget-info{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.budget-header{
+    width: 200px;
+}
+.budget-header h3{
+    line-height: 1.5;
+    padding: .5rem 1rem;
+}
+
+.add-budget-input{
+    height: 2em;
+}
+
+.dollar{
+    padding-left: .5rem;
+    padding-right: .5rem;
+}

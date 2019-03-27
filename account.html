@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/account.css" />
+    <title>Account</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">BudgetForNow</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"
+              >Home </a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="budget.html">Budget</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Report</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="account.html">Account </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="wrapper">
+        <div class="container home-section">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="budget-card-view">
+                  <header class="card-header transparent">Profile <a href="#" data-toggle="modal"
+                    data-target="#editprofileModal" class="add-a-card"><i class="far fa-edit" ></i></a></header>
+                  <div class="card-content" id="profile" >
+                      <ul>
+                          <li class="card-balance">
+                            <div class="balance-header">
+                              <h3>
+                                <div>
+                                    <i class="fas fa-user-circle"></i>
+                                  <span>Name</span>
+                                </div>
+                                <span class="balance-amount uname" id=“uname” name="usrname">First, Last</span>
+                              </h3>
+                            </div>
+                          </li>
+                          <li class="card-balance">
+                              <div class="balance-header">
+                                <h3>
+                                  <div>
+                                      <i class="fas fa-birthday-cake"></i>
+                                    <span>Birthday</span>
+                                  </div>
+                                  <span class="balance-amount" id="bday">yyyy-mm-dd</span>
+                                </h3>
+                              </div>
+                            </li>
+                            <li class="card-balance">
+                                <div class="balance-header">
+                                  <h3>
+                                    <div>
+                                        <i class="far fa-address-card"></i>
+                                      <span>Address</span>
+                                    </div>
+                                    <span class="balance-amount" id="address"> xxxx Ave</span>
+                                  </h3>
+                                </div>
+                              </li>
+                              <li class="card-balance">
+                                  <div class="balance-header">
+                                    <h3>
+                                      <div>
+                                          <i class="fas fa-location-arrow"></i>
+                                        <span>Location</span>
+                                      </div>
+                                      <span class="balance-amount" id="loc">Evanston, IL</span>
+                                    </h3>
+                                  </div>
+                                </li>
+                                <li class="card-balance">
+                                    <div class="balance-header">
+                                      <h3>
+                                        <div>
+                                            <i class="fas fa-phone"></i>
+                                          <span >Phone</span>
+                                        </div>
+                                        <span class="balance-amount" id="phone">xxxxxxx</span>
+                                      </h3>
+                                    </div>
+                                  </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="budget-card-view">
+                      <header class="card-header transparent">Cards <a href="#" class="add-a-card" data-toggle="modal"
+                        data-target="#addCardModal"><i class="fas fa-plus" ></i></a></header>
+                      <div class="card-content" id="cards-list">
+                          <div class="card-wrapper" id="chase">
+                              <div class="card budget-card border-0 ">
+                                      <div class="card-body">
+                                        <img class="card-logo" src="./images/chase.png"/>
+                                          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                                          <div class="card-text budget-card-text">
+                                            <p>CHASE COLLEGE (...xxxx)</p>
+                                            <p>$ 200</p>
+                                          </div>
+                                          <a class="card-link add-another-ba" data-toggle="collapse" href="#actions"><i class="fas fa-caret-down dropdownicon"></i>Manage This Card</a>
+                                          <div class="collapse action-collapse" id="actions">
+                                              <button class="Cardaction btn" data-toggle="modal"
+                                              data-target="#viewCardModal"><i class="far fa-eye"></i></button>
+                                            <button class="Cardaction btn" data-toggle="collapse" onclick="remove('chase')"><i class="far fa-trash-alt"></i></button>
+                                          </div>
+                                      </div>
+                              </div>
+                          </div>
+                          <div class="card-wrapper" id="Boa">
+                              <div class="card budget-card border-0 ">
+                                      <div class="card-body">
+                                        <img class="card-logo" src="./images/boa.png"/>
+                                          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                                          <div class="card-text budget-card-text">
+                                            <p>BOA CASH REWARDS (...xxxx)</p>
+                                            <p>$ 70</p>
+                                          </div>
+                                          <a class="card-link add-another-ba" data-toggle="collapse" href="#Boa-actions"><i class="fas fa-caret-down dropdownicon"></i>Manage This Card</a>
+                                          <div class="collapse action-collapse" id="Boa-actions">
+                                              <a class="Cardaction btn" data-toggle="modal"
+                                              data-target="#viewCardModal"><i class="far fa-eye"></i></a>
+                                            <button class="Cardaction btn" data-toggle="collapse" onclick="remove('Boa')"><i class="far fa-trash-alt"></i></button>
+                                          </div>
+                                      </div>
+                              </div>
+                          </div>
+
+                      </div>
+              </div>
+            </div>
+        </div>
+
+
+
+      <!-- addCardModal -->
+      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="addCardModal">
+        <div class="modal-dialog bugdet-modal border-0" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add A Card</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" height>
+                <div class="form-group row">
+                    <div class="col-sm-3">Bank Name</div>
+                    <div class="col-sm-9">
+                      <select class="custom-select" id="BankName">
+                        <option selected>Choose...</option>
+                        <option value="1">Bank Of American</option>
+                        <option value="2">Chase</option>
+                        <option value="3">Discover</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-sm-3">Account Name</div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="account" placeholder="Enter your account name" value="" required>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-sm-3">Password</div>
+                      <div class="col-sm-9">
+                        <input type="password" class="form-control buget-radius" id="password" value="" required>
+                      </div>
+                  </div>
+            </div>
+            <div class="modal-footer bugdet-modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary budget-radius transparent"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button onclick="addACard()" type="button" class="btn btn-primary budget-radius primary-color border-0">
+                Sign in
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of addCardModal-->
+       <!-- viewCardModal -->
+       <div class="modal modal-wrap" tabindex="-1" role="dialog" id="viewCardModal">
+        <div class="modal-dialog bugdet-modal border-0" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Your Card</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" height>
+                <div class="form-group row">
+                    <div class="col-sm-3">Card Name</div>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control buget-radius" id="CardName" value="CHASE COLLEGE">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-3">Status</div>
+                    <div class="col-sm-9">
+                      <select class="custom-select" id="CardStatus">
+                        <option value="0" selected>Active</option>
+                        <option value="1">Inactive</option>
+                      </select>                    
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-sm-3">Type</div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="CardType" value="Checking" readonly>
+                      </div>
+                  </div>
+            </div>
+            <div class="modal-footer bugdet-modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary budget-radius transparent"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button onclick="save()" type="button" class="btn btn-primary budget-radius primary-color border-0">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of viewCardModal-->
+      <!-- editprofileModal -->
+      <div class="modal modal-wrap" tabindex="-1" role="dialog" id="editprofileModal">
+          <div class="modal-dialog bugdet-modal border-0" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit your profile</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" height>
+                  <div class="form-group row">
+                      <div class="col-sm-3">Name</div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="edituname" value="First, Last" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Birthday</div>
+                        <div class="col-sm-9">
+                            <input
+                            type="date"
+                            class="form-control buget-radius"
+                            id="editdate"
+                            name="date"
+                            value=""
+                            min="1900-01-01"
+                            max="2019-12-31"
+                          />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Address</div>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="editaddress" value="xxxx Ave" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Location</div>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="editlocation" value="Evanston, IL" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">Phone</div>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control buget-radius" id="editphone" value="xxxxxxx" required>
+                        </div>
+                    </div>
+              </div>
+              <div class="modal-footer bugdet-modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary budget-radius transparent"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button onclick="updateProfile()" type="button" class="btn btn-primary budget-radius primary-color border-0">
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of addCardModal-->
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/account.js"></script>
+  </body>
+</html>
